@@ -1,0 +1,67 @@
+#!/bin/bash
+set -eo pipefail
+
+main() {
+  ensure  check_fish      install_fish
+  ensure  check_fisher    install_fisher
+  ensure  check_starship  install_starship
+  ensure  check_fzf       install_fzf
+}
+
+check_fish() {
+  command_exists fish
+}
+install_fish() {
+  if command_exists brew; then
+    brew install fish
+  elif command_exists apt-get; then
+    sudo apt-get install -y fish
+  fi
+}
+
+check_fisher() {
+  test -f ~/.config/fish/functions/fisher.fish
+}
+install_fisher() {
+  fish -c 'curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher'
+}
+
+check_starship() {
+  command_exists starship
+}
+install_starship() {
+  if command_exists brew; then
+    brew install starship
+  else
+    sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
+  fi
+}
+
+check_fzf() {
+  command_exists fzf
+}
+install_fzf() {
+  if command_exists brew; then
+    brew install fzf
+  elif command_exists apt-get; then
+    sudo apt-get install -y fzf
+  fi
+}
+
+ensure() {
+  if ! "$1"; then
+    echo >&2 "=> $1 failed, running $2..."
+    "$2"
+  fi
+  if ! "$1"; then
+    echo >&2 "!! $1 still failed, aborted"
+    exit 1
+  fi
+  echo >&2 "=> $1 passed"
+}
+
+command_exists() {
+  command -v "$1" >/dev/null 2>&1
+}
+
+main

@@ -1,3 +1,6 @@
 - clean: []
 - link: {}
-- shell: []
+- shell:
+    - command: bash -e setup_stuff
+      stdout: true
+      stderr: true
