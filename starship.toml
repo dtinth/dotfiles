@@ -9,3 +9,10 @@ format = "[on](fg:#8b8685) [$symbol$branch]($style) "
 
 [cmd_duration]
 format = "[took](fg:#8b8685) [$duration]($style) "
+
+[username]
+format = "[$user]($style)[@](fg:#8b8685)"
+
+[hostname]
+format = "[$hostname]($style)[:](fg:#8b8685)"
+
