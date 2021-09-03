@@ -1,5 +1,8 @@
 - clean: []
-- link: {}
+- link:
+    ~/.config/fish:
+      glob: true
+      path: fish/**/*.fish
 - shell:
     - command: bash -e setup_stuff
       stdout: true
