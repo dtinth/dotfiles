@@ -3,6 +3,8 @@
     ~/.config/fish:
       glob: true
       path: fish/**/*.fish
+    ~/.config/starship.toml:
+      path: starship.toml
 - shell:
     - command: bash -e setup_stuff
       stdout: true
