@@ -6,3 +6,6 @@ style = "fg:#bbeeff"
 symbol = ""
 style = "fg:#d7fc70"
 format = "[on](fg:#8b8685) [$symbol$branch]($style) "
+
+[cmd_duration]
+format = "[took](fg:#8b8685) [$duration]($style) "
