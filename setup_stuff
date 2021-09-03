@@ -6,6 +6,7 @@ main() {
   ensure  check_fisher    install_fisher
   ensure  check_starship  install_starship
   ensure  check_fzf       install_fzf
+  ensure  check_fish_git  install_fish_git
 }
 
 check_fish() {
@@ -46,6 +47,13 @@ install_fzf() {
   elif command_exists apt-get; then
     sudo apt-get install -y fzf
   fi
+}
+
+check_fish_git() {
+  test -f ~/.config/fish/conf.d/git.fish
+}
+install_fish_git() {
+  fish -c 'fisher install jhillyerd/plugin-git'
 }
 
 ensure() {
