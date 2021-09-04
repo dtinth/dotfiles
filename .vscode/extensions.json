@@ -1,5 +1,7 @@
 {
   "recommendations": [
-    "timonwong.shellcheck"
+    "timonwong.shellcheck",
+    "bungcip.better-toml",
+    "esbenp.prettier-vscode"
   ]
 }
