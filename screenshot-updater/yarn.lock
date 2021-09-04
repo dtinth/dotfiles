@@ -283,6 +283,11 @@ ws@^7.4.6:
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.5.4.tgz#56bfa20b167427e138a7795de68d134fe92e21f9"
   integrity sha512-zP9z6GXm6zC27YtspwH99T3qTG7bBFv2VIkeHstMLrLlDJuzA7tQ5ls3OJ1hOGGCzTQPniNJoHXIAOS0Jljohg==
 
+xterm-headless@^4.14.0-beta.22:
+  version "4.14.0-beta.22"
+  resolved "https://registry.yarnpkg.com/xterm-headless/-/xterm-headless-4.14.0-beta.22.tgz#72bdfc85aa9a52d57763adb4a270864a42c3ae31"
+  integrity sha512-lDXvdnrDXdAIE37M7B2DrTp9iN513Iwty+5OUnduttOA2Cd1vCP1hT/isSc/Dh0k0FkGB/ZrAuIB8fesaoSelQ==
+
 xterm@^4.13.0:
   version "4.13.0"
   resolved "https://registry.yarnpkg.com/xterm/-/xterm-4.13.0.tgz#7998de1e2ad92c4796fe45807be4f31061f3d9d1"

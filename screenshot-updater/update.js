@@ -4,6 +4,8 @@ const { chromium } = require('playwright')
 const fs = require('fs')
 const glob = require('glob')
 
+const shouldReconcile = process.argv.includes('--reconcile')
+
 async function main() {
   const browser = await chromium.launch()
   const page = await browser.newPage({

@@ -1,6 +1,7 @@
 const pty = require('node-pty')
 const fs = require('fs')
 const mkdirp = require('mkdirp')
+const { Terminal } = require('xterm-headless/')
 
 const TESTER_SHELL_COMMAND =
   process.env.TESTER_SHELL_COMMAND ||
@@ -33,23 +34,65 @@ class ShellTester {
 
   async _runSession({ name, callback }) {
     const command = TESTER_SHELL_COMMAND
+    const cols = 80
+    const rows = 16
     const ptyProcess = pty.spawn('bash', ['-c', command], {
+      cols,
+      rows,
       name: 'xterm-color',
-      cols: 80,
-      rows: 16,
       cwd: process.cwd(),
       env: process.env,
     })
-    const shellSession = new ShellSession(ptyProcess)
+    const stabilizer = new Stabilizer()
+    const term = new Terminal({ cols, rows })
+    ptyProcess.onData((data) => {
+      stabilizer.debounce()
+      term.write(data)
+    })
+    const shellSession = new ShellSession(ptyProcess, stabilizer)
     try {
       await callback(shellSession)
     } finally {
+      await stabilizer.waitUntilStabilized()
+
+      // Show terminal output
+      const text = []
+      console.log('+' + '-'.repeat(cols) + '+')
+      const buffer = term.buffer.active
+      for (let i = 0; i < rows; i++) {
+        const line = buffer.getLine(i + buffer.viewportY)
+        const lineString = line.translateToString()
+        text.push(lineString)
+        console.log('|' + lineString + '|')
+      }
+      console.log('+' + '-'.repeat(cols) + '+')
+
+      // Kill the shell
       ptyProcess.kill()
+
+      // Save result to file
       const events = shellSession.events
       mkdirp.sync('tmp/output')
       fs.writeFileSync(
         `tmp/output/${name}.js`,
-        'SESSION_DATA=' + JSON.stringify({ events }),
+        'SESSION_DATA=' + JSON.stringify({ events, cols, rows, text }),
+      )
+    }
+  }
+}
+
+class Stabilizer {
+  _lastTime = Date.now()
+  debounce() {
+    this._lastTime = Date.now()
+  }
+  get _timeToStabilize() {
+    return this._lastTime + 100
+  }
+  async waitUntilStabilized() {
+    while (Date.now() < this._timeToStabilize) {
+      await new Promise((resolve) =>
+        setTimeout(resolve, this._timeToStabilize - Date.now()),
       )
     }
   }
@@ -62,8 +105,9 @@ class ShellSession {
 
   prompt = '❯'
 
-  constructor(ptyProcess) {
-    this.ptyProcess = ptyProcess
+  constructor(ptyProcess, stabilizer) {
+    this._ptyProcess = ptyProcess
+    this._stabilizer = stabilizer
     ptyProcess.onData((data) => {
       this._output += data
       this._events.push({
@@ -71,29 +115,48 @@ class ShellSession {
         type: 'output',
         data,
       })
-      console.error(`<= Received: ${JSON.stringify(data)}`)
       this._listeners.forEach((l) => l())
     })
   }
 
-  async expect(str) {
-    return new Promise((resolve) => {
+  async expect(str, timeoutMs = 1000) {
+    await new Promise((resolve, reject) => {
       const check = () => {
         const index = this._output.indexOf(str)
         if (index !== -1) {
           this._output = this._output.substr(index + str.length)
           this._listeners.delete(check)
           console.error(`=> Found: ${JSON.stringify(str)}`)
+          clearTimeout(timeout)
           resolve()
         }
       }
+      const timeout = setTimeout(() => {
+        this._listeners.delete(check)
+        reject(new Error(`Expected ${JSON.stringify(str)} not found`))
+      }, timeoutMs)
       this._listeners.add(check)
       check()
     })
+    await this._stabilizer.waitUntilStabilized()
+  }
+
+  async retry(callback, timeoutMs = 1000) {
+    const start = Date.now()
+    while (true) {
+      try {
+        return await callback()
+      } catch (e) {
+        if (Date.now() - start > timeoutMs) {
+          throw e
+        }
+      }
+    }
   }
 
   async send(data) {
-    this.ptyProcess.write(data)
+    await this._stabilizer.waitUntilStabilized()
+    this._ptyProcess.write(data)
     this._events.push({
       time: Date.now(),
       type: 'send',
