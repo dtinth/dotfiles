@@ -13,14 +13,12 @@ jobs:
       - name: Install emoji support
         run: |
           sudo apt-get install fonts-noto-color-emoji fonts-noto -y
-      - name: Build base image
+      - name: Build image
         run: docker-compose build
-      - name: Build tester image
-        run: ./tester/build.sh
-      - name: Run tests
-        run: ./tester/run_test.sh
-      - name: Install dependencies for generating screenshot
+      - name: Install dependencies for running tests
         run: yarn --cwd=screenshot-updater
+      - name: Run tests
+        run: node screenshot-updater/test.js
       - name: Update screenshot
         run: node screenshot-updater/update.js
       - uses: actions/upload-artifact@v2
