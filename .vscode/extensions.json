@@ -2,6 +2,7 @@
   "recommendations": [
     "timonwong.shellcheck",
     "bungcip.better-toml",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "asciidoctor.asciidoctor-vscode"
   ]
 }
