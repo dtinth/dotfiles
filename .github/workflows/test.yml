@@ -16,11 +16,11 @@ jobs:
       - name: Build image
         run: docker-compose build
       - name: Install dependencies for running tests
-        run: yarn --cwd=screenshot-updater
+        run: yarn --cwd=example-updater
       - name: Run tests
-        run: node screenshot-updater/test.js
+        run: node example-updater/test.js
       - name: Update screenshot
-        run: node screenshot-updater/update.js
+        run: node example-updater/update.js
         env:
           SCREENSHOT_OUTPUT: examples
       - uses: actions/upload-artifact@v2
