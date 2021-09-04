@@ -21,7 +21,16 @@ jobs:
         run: node screenshot-updater/test.js
       - name: Update screenshot
         run: node screenshot-updater/update.js
+        env:
+          SCREENSHOT_OUTPUT: examples
       - uses: actions/upload-artifact@v2
         with:
           name: output
           path: tmp/output
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update example images
+          file_pattern: examples/*
+          commit_user_name: dtinth-bot
+          commit_user_email: dtinth-bot@users.noreply.github.com
+          commit_author: dtinth-bot <dtinth-bot@users.noreply.github.com>
