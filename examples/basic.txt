@@ -2,9 +2,10 @@ Welcome to fish, the friendly interactive shell
 
 tester@test:/dotfiles🔒 #master
 ✦ ❯ ls
-Dockerfile  docker-compose.yml  install*           screenshot-updater/
-LICENSE.md  dotbot/             install.conf.yaml  setup_stuff
-README.md   fish/               install.ps1        starship.toml
+Dockerfile          dotbot/    install.conf.yaml    starship.toml
+LICENSE.md          examples/  install.ps1
+README.md           fish/      screenshot-updater/
+docker-compose.yml  install*   setup_stuff
 
 tester@test:/dotfiles🔒 #master
 ✦ ❯ cd
