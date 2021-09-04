@@ -5,7 +5,11 @@ style = "fg:#bbeeff"
 [git_branch]
 symbol = ""
 style = "fg:#d7fc70"
-format = "[on](fg:#8b8685) [$symbol$branch]($style) "
+format = "[#](fg:#8b8685)[$symbol$branch]($style) "
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = "[@](fg:#8b8685)"
 
 [cmd_duration]
 format = "[took](fg:#8b8685) [$duration]($style) "
@@ -16,3 +20,10 @@ format = "[$user]($style)[@](fg:#8b8685)"
 [hostname]
 format = "[$hostname]($style)[:](fg:#8b8685)"
 
+[package]
+style = "fg:#8b8685"
+format = "[package@$version]($style) "
+
+[nodejs]
+style = "fg:#8b8685"
+format = "[node(@$version)]($style) "
