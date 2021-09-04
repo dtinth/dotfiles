@@ -1,0 +1,29 @@
+name: Test
+on:
+  workflow_dispatch:
+  push:
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      - name: Install emoji support
+        run: |
+          sudo apt-get install fonts-noto-color-emoji fonts-noto -y
+      - name: Build base image
+        run: docker-compose build
+      - name: Build tester image
+        run: ./tester/build.sh
+      - name: Run tests
+        run: ./tester/run.sh node tester/test.js
+      - name: Install dependencies for generating screenshot
+        run: yarn --cwd=screenshot-updater
+      - name: Update screenshot
+        run: node screenshot-updater/update.js
+      - uses: actions/upload-artifact@v2
+        with:
+          name: output
+          path: tmp/output
