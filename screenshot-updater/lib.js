@@ -2,6 +2,10 @@ const pty = require('node-pty')
 const fs = require('fs')
 const mkdirp = require('mkdirp')
 
+const TESTER_SHELL_COMMAND =
+  process.env.TESTER_SHELL_COMMAND ||
+  'docker run -h test --init -ti --rm dotfiles_shell fish'
+
 class ShellTester {
   _sessionsDefinitions = []
 
@@ -28,7 +32,7 @@ class ShellTester {
   }
 
   async _runSession({ name, callback }) {
-    const command = 'docker run --init -ti --rm dotfiles_shell fish'
+    const command = TESTER_SHELL_COMMAND
     const ptyProcess = pty.spawn('bash', ['-c', command], {
       name: 'xterm-color',
       cols: 80,
