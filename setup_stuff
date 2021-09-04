@@ -8,6 +8,7 @@ main() {
   ensure  check_fzf       install_fzf
   ensure  check_fish_git  install_fish_git
   ensure  check_gh        install_gh
+  ensure  check_bat       install_bat
 }
 
 check_fish() {
@@ -70,6 +71,22 @@ install_gh() {
     install_apt_package gh
   fi
 }
+
+check_bat() {
+  command_exists bat
+}
+install_bat() {
+  if command_exists brew; then
+    brew install bat
+  elif command_exists apt-get; then
+    wget -O/tmp/bat.deb https://github.com/sharkdp/bat/releases/download/v0.18.3/bat_0.18.3_amd64.deb
+    install_apt_package /tmp/bat.deb
+  fi
+  if ! command_exists bat && test -f /usr/bin/batcat; then
+    sudo ln -s /usr/bin/batcat /usr/local/bin/bat
+  fi
+}
+
 ensure() {
   if ! "$1"; then
     echo >&2 "=> $1 failed, running $2..."
