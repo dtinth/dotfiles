@@ -131,7 +131,7 @@ class ShellSession {
     })
   }
 
-  async expect(str, timeoutMs = 1000) {
+  async expect(str, timeoutMs = 10000) {
     await new Promise((resolve, reject) => {
       const check = () => {
         const index = this._output.indexOf(str)
@@ -153,7 +153,7 @@ class ShellSession {
     await this._stabilizer.waitUntilStabilized()
   }
 
-  async retry(callback, timeoutMs = 1000) {
+  async retry(callback, timeoutMs = 20000) {
     const start = Date.now()
     while (true) {
       try {
