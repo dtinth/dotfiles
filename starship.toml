@@ -16,9 +16,13 @@ format = "[took](fg:#8b8685) [$duration]($style) "
 
 [username]
 format = "[$user]($style)[@](fg:#8b8685)"
+show_always = true
+style_user = "#bbeeff"
 
 [hostname]
 format = "[$hostname]($style)[:](fg:#8b8685)"
+ssh_only = false
+style = "#ffffaa"
 
 [package]
 style = "fg:#8b8685"
