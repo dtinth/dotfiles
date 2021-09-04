@@ -17,7 +17,7 @@ install_fish() {
   if command_exists brew; then
     brew install fish
   elif command_exists apt-get; then
-    sudo apt-get install -y fish
+    install_apt_package fish
   fi
 }
 
@@ -46,7 +46,7 @@ install_fzf() {
   if command_exists brew; then
     brew install fzf
   elif command_exists apt-get; then
-    sudo apt-get install -y fzf
+    install_apt_package fzf
   fi
 }
 
@@ -67,7 +67,7 @@ install_gh() {
     curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
     sudo apt-get update
-    sudo apt-get install gh -y
+    install_apt_package gh
   fi
 }
 ensure() {
@@ -84,6 +84,15 @@ ensure() {
 
 command_exists() {
   command -v "$1" >/dev/null 2>&1
+}
+
+apt_updated=
+install_apt_package() {
+  if [ -z "$apt_updated" ]; then
+    sudo apt-get update
+    apt_updated=1
+  fi
+  sudo apt-get install -y "$@"
 }
 
 main
