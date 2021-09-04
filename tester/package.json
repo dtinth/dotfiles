@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "node-pty": "^0.10.1",
-    "xterm": "^4.13.0"
+    "node-pty": "^0.10.1"
   }
 }
