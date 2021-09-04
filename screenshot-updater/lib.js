@@ -16,9 +16,12 @@ class ShellTester {
     })
   }
 
-  async run() {
+  async run(argv = process.argv.slice(2)) {
     require('make-promises-safe')
-    for (const sessionDefinition of this._sessionsDefinitions) {
+    const sessionsToRun = argv.length
+      ? this._sessionsDefinitions.filter(({ name }) => argv.includes(name))
+      : this._sessionsDefinitions
+    for (const sessionDefinition of sessionsToRun) {
       console.log(`Running session ${sessionDefinition.name}`)
       await this._runSession(sessionDefinition)
     }
@@ -53,6 +56,8 @@ class ShellSession {
   _events = [{ time: Date.now(), type: 'started' }]
   _listeners = new Set()
 
+  prompt = '❯'
+
   constructor(ptyProcess) {
     this.ptyProcess = ptyProcess
     ptyProcess.onData((data) => {
@@ -62,6 +67,7 @@ class ShellSession {
         type: 'output',
         data,
       })
+      console.error(`<= Received: ${JSON.stringify(data)}`)
       this._listeners.forEach((l) => l())
     })
   }
@@ -82,9 +88,14 @@ class ShellSession {
     })
   }
 
-  async send(str) {
-    this.ptyProcess.write(str)
-    console.error(`=> Sent:  ${JSON.stringify(str)}`)
+  async send(data) {
+    this.ptyProcess.write(data)
+    this._events.push({
+      time: Date.now(),
+      type: 'send',
+      data,
+    })
+    console.error(`=> Sent:  ${JSON.stringify(data)}`)
   }
 
   get events() {
