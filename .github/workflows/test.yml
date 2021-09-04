@@ -18,7 +18,7 @@ jobs:
       - name: Build tester image
         run: ./tester/build.sh
       - name: Run tests
-        run: ./tester/run.sh node tester/test.js
+        run: ./tester/run_test.sh
       - name: Install dependencies for generating screenshot
         run: yarn --cwd=screenshot-updater
       - name: Update screenshot
