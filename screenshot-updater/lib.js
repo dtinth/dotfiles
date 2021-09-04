@@ -53,6 +53,7 @@ class ShellTester {
     try {
       await callback(shellSession)
     } finally {
+      const { cols, rows } = ptyProcess
       await stabilizer.waitUntilStabilized()
 
       // Show terminal output
@@ -116,6 +117,17 @@ class ShellSession {
         data,
       })
       this._listeners.forEach((l) => l())
+    })
+  }
+
+  async resize(rows, cols) {
+    await this._stabilizer.waitUntilStabilized()
+    this._ptyProcess.resize(cols, rows)
+    this._events.push({
+      time: Date.now(),
+      type: 'resize',
+      cols,
+      rows,
     })
   }
 
