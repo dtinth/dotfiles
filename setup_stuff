@@ -35,7 +35,7 @@ install_starship() {
   if command_exists brew; then
     brew install starship
   else
-    sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
+    sudo sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
   fi
 }
 

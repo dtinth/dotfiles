@@ -1,6 +1,9 @@
 {
   "dependencies": {
     "glob": "^7.1.7",
+    "make-promises-safe": "^5.1.0",
+    "mkdirp": "^1.0.4",
+    "node-pty": "^0.10.1",
     "playwright": "^1.14.1",
     "xterm": "^4.13.0"
   }

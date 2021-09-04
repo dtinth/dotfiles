@@ -1,3 +1,5 @@
+require('make-promises-safe')
+
 const { chromium } = require('playwright')
 const fs = require('fs')
 
@@ -9,7 +11,10 @@ async function main() {
   await page.goto('file://' + __dirname + '/preview.html')
 
   const rawData = fs.readFileSync('tmp/output/basic.js', 'utf8')
-  const data = JSON.parse(rawData.slice(rawData.indexOf('{'))).output.join('')
+  const data = JSON.parse(rawData.slice(rawData.indexOf('{')))
+    .events.filter((x) => x.type === 'output')
+    .map((x) => x.data)
+    .join('')
 
   await page.evaluate((data) => {
     show(data)
