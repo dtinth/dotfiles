@@ -43,41 +43,12 @@ class ShellTester {
       cwd: process.cwd(),
       env: process.env,
     })
-    const stabilizer = new Stabilizer()
-    const term = new Terminal({ cols, rows })
-    ptyProcess.onData((data) => {
-      stabilizer.debounce()
-      term.write(data)
-    })
-    const shellSession = new ShellSession(ptyProcess, stabilizer)
+    const shellSession = new ShellSession(ptyProcess)
     try {
       await callback(shellSession)
     } finally {
-      const { cols, rows } = ptyProcess
-      await stabilizer.waitUntilStabilized()
-
-      // Show terminal output
-      const text = []
-      console.log('+' + '-'.repeat(cols) + '+')
-      const buffer = term.buffer.active
-      for (let i = 0; i < rows; i++) {
-        const line = buffer.getLine(i + buffer.viewportY)
-        const lineString = line.translateToString()
-        text.push(lineString)
-        console.log('|' + lineString + '|')
-      }
-      console.log('+' + '-'.repeat(cols) + '+')
-
-      // Kill the shell
+      await shellSession.capture(name + '_end', { implicit: true })
       ptyProcess.kill()
-
-      // Save result to file
-      const events = shellSession.events
-      mkdirp.sync('tmp/output')
-      fs.writeFileSync(
-        `tmp/output/${name}.js`,
-        'SESSION_DATA=' + JSON.stringify({ events, cols, rows, text }),
-      )
     }
   }
 }
@@ -106,16 +77,20 @@ class ShellSession {
 
   prompt = '❯'
 
-  constructor(ptyProcess, stabilizer) {
+  constructor(ptyProcess) {
     this._ptyProcess = ptyProcess
-    this._stabilizer = stabilizer
+    this._stabilizer = new Stabilizer()
+    const { cols, rows } = ptyProcess
+    this._term = new Terminal({ cols, rows })
     ptyProcess.onData((data) => {
+      this._stabilizer.debounce()
       this._output += data
       this._events.push({
         time: Date.now(),
         type: 'output',
         data,
       })
+      this._term.write(data)
       this._listeners.forEach((l) => l())
     })
   }
@@ -177,8 +152,32 @@ class ShellSession {
     console.error(`=> Sent:  ${JSON.stringify(data)}`)
   }
 
-  get events() {
-    return this._events
+  async capture(name, extra = {}) {
+    const term = this._term
+    const { cols, rows } = this._ptyProcess
+    await this._stabilizer.waitUntilStabilized()
+
+    // Show terminal output
+    const text = []
+    console.log('+' + '-'.repeat(cols) + '+')
+    console.log('|' + ` Capture: ${name}`.padEnd(cols) + '|')
+    console.log('+' + '-'.repeat(cols) + '+')
+    const buffer = term.buffer.active
+    for (let i = 0; i < rows; i++) {
+      const line = buffer.getLine(i + buffer.viewportY)
+      const lineString = line.translateToString()
+      text.push(lineString)
+      console.log('|' + lineString + '|')
+    }
+    console.log('+' + '-'.repeat(cols) + '+')
+
+    // Save result to file
+    const events = this._events
+    mkdirp.sync('tmp/output')
+    fs.writeFileSync(
+      `tmp/output/${name}.js`,
+      'SESSION_DATA=' + JSON.stringify({ ...extra, events, cols, rows, text }),
+    )
   }
 }
 

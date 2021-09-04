@@ -17,6 +17,11 @@ async function main() {
   for (const outputFile of glob.sync('tmp/output/*.js')) {
     const rawData = fs.readFileSync(outputFile, 'utf8')
     const output = JSON.parse(rawData.slice(rawData.indexOf('{')))
+
+    if (output.implicit) {
+      continue
+    }
+
     const name = basename(outputFile, '.js')
 
     const textFile = `${outputDirectory}/${name}.txt`
