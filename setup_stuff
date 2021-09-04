@@ -7,6 +7,7 @@ main() {
   ensure  check_starship  install_starship
   ensure  check_fzf       install_fzf
   ensure  check_fish_git  install_fish_git
+  ensure  check_gh        install_gh
 }
 
 check_fish() {
@@ -56,6 +57,19 @@ install_fish_git() {
   fish -c 'fisher install jhillyerd/plugin-git'
 }
 
+check_gh() {
+  command_exists gh
+}
+install_gh() {
+  if command_exists brew; then
+    brew install gh
+  elif command_exists apt-get; then
+    curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+    sudo apt-get update
+    sudo apt-get install gh -y
+  fi
+}
 ensure() {
   if ! "$1"; then
     echo >&2 "=> $1 failed, running $2..."

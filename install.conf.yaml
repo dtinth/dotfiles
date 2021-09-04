@@ -3,6 +3,7 @@
     ~/.config/fish:
       glob: true
       path: fish/**/*.fish
+      force: true
     ~/.config/starship.toml:
       path: starship.toml
 - shell:
