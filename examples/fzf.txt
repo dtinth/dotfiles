@@ -1,0 +1,12 @@
+
+tester@test:/dotfiles🔒 #master
+
+
+
+
+
+  ls -lh
+  git status
+> clear
+  3/3 +S
+>
