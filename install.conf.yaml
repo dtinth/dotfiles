@@ -4,8 +4,10 @@
       glob: true
       path: fish/**/*.fish
       force: true
+      create: true
     ~/.config/starship.toml:
       path: starship.toml
+      create: true
 - shell:
     - command: bash -e setup_stuff
       stdout: true
