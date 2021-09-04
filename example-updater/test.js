@@ -15,6 +15,13 @@ tester.session('basic', async (s) => {
   await s.capture('basic')
 })
 
+tester.session('bat', async (s) => {
+  await s.expect(s.prompt)
+  await s.send('bat example-updater/test.js -r :8 && sleep inf\r')
+  await s.expect('ShellTester')
+  await s.capture('example-updater')
+})
+
 tester.session('fzf', async (s) => {
   await s.expect(s.prompt)
 
