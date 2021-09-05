@@ -1,34 +1,45 @@
 
 [username]
-format = "[$user]($style)[@](fg:#8b8685)"
+# format = "[$user]($style)[@](fg:#8b8685)"
+format = "[$user]($style)[@](fg:102)"
 show_always = true
-style_user = "#bbeeff"
+# style_user = "fg:#bbeeff"
+style_user = "fg:159"
 
 [hostname]
-format = "[$hostname]($style)[:](fg:#8b8685)"
+# format = "[$hostname]($style)[:](fg:#8b8685)"
+format = "[$hostname]($style)[:](fg:102)"
 ssh_only = false
-style = "#ffffaa"
+# style = "fg:#ffffaa"
+style = "fg:229"
 
 [directory]
 truncate_to_repo = false
-style = "fg:#bbeeff"
+# style = "fg:#bbeeff"
+style = "fg:159"
 
 [git_branch]
 symbol = ""
-style = "fg:#d7fc70"
-format = "[#](fg:#8b8685)[$symbol$branch]($style) "
+# style = "fg:#d7fc70"
+style = "fg:191"
+# format = "[#](fg:#8b8685)[$symbol$branch]($style) "
+format = "[#](fg:102)[$symbol$branch]($style) "
 
 [git_commit]
 commit_hash_length = 4
-tag_symbol = "[@](fg:#8b8685)"
+# tag_symbol = "[@](fg:#8b8685)"
+tag_symbol = "[@](fg:102)"
 
 [package]
-style = "fg:#8b8685"
+# style = "fg:#8b8685"
+style = "fg:102"
 format = "[package@$version]($style) "
 
 [nodejs]
-style = "fg:#8b8685"
+# style = "fg:#8b8685"
+style = "fg:102"
 format = "[node(@$version)]($style) "
 
 [cmd_duration]
-format = "[took](fg:#8b8685) [$duration]($style) "
+# format = "[took](fg:#8b8685) [$duration]($style) "
+format = "[took](fg:102) [$duration]($style) "
