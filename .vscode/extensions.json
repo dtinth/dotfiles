@@ -3,6 +3,7 @@
     "timonwong.shellcheck",
     "bungcip.better-toml",
     "esbenp.prettier-vscode",
-    "asciidoctor.asciidoctor-vscode"
+    "asciidoctor.asciidoctor-vscode",
+    "bmalehorn.vscode-fish"
   ]
 }
