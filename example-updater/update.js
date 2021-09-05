@@ -16,7 +16,9 @@ async function main() {
     const page = await browser.newPage({
       deviceScaleFactor: 2,
     })
-    await page.goto('file://' + __dirname + '/preview.html')
+    await page.goto(
+      'file://' + __dirname + '/node_modules/shell-tester/preview.html',
+    )
 
     for (const outputFile of glob.sync('tmp/output/*.js')) {
       const rawData = fs.readFileSync(outputFile, 'utf8')
@@ -43,14 +45,7 @@ async function main() {
         continue
       }
 
-      const data = output.events
-        .filter((x) => x.type === 'output')
-        .map((x) => x.data)
-        .join('')
-
-      await page.evaluate((data) => {
-        show(data)
-      }, data)
+      await page.evaluate((output) => show(output), output)
 
       mkdirp.sync(outputDirectory)
       const elementHandle = await page.$('#terminal .xterm-screen')

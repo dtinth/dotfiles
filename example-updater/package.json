@@ -4,9 +4,7 @@
     "glob": "^7.1.7",
     "make-promises-safe": "^5.1.0",
     "mkdirp": "^1.0.4",
-    "node-pty": "^0.10.1",
     "playwright": "^1.14.1",
-    "xterm": "^4.13.0",
-    "xterm-headless": "^4.14.0-beta.22"
+    "shell-tester": "dtinth/shell-tester#2d66a8d3598eff6e65e1df28facbac0ffacf0e73"
   }
 }

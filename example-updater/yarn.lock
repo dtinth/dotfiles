@@ -269,6 +269,15 @@ rimraf@^3.0.2:
   dependencies:
     glob "^7.1.3"
 
+shell-tester@dtinth/shell-tester#2d66a8d3598eff6e65e1df28facbac0ffacf0e73:
+  version "0.0.0-0"
+  resolved "https://codeload.github.com/dtinth/shell-tester/tar.gz/2d66a8d3598eff6e65e1df28facbac0ffacf0e73"
+  dependencies:
+    make-promises-safe "^5.1.0"
+    mkdirp "^1.0.4"
+    node-pty "^0.10.1"
+    xterm-headless "4.14.0-beta.22"
+
 signal-exit@^3.0.2:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
@@ -301,15 +310,10 @@ ws@^7.4.6:
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.5.4.tgz#56bfa20b167427e138a7795de68d134fe92e21f9"
   integrity sha512-zP9z6GXm6zC27YtspwH99T3qTG7bBFv2VIkeHstMLrLlDJuzA7tQ5ls3OJ1hOGGCzTQPniNJoHXIAOS0Jljohg==
 
-xterm-headless@^4.14.0-beta.22:
+xterm-headless@4.14.0-beta.22:
   version "4.14.0-beta.22"
   resolved "https://registry.yarnpkg.com/xterm-headless/-/xterm-headless-4.14.0-beta.22.tgz#72bdfc85aa9a52d57763adb4a270864a42c3ae31"
   integrity sha512-lDXvdnrDXdAIE37M7B2DrTp9iN513Iwty+5OUnduttOA2Cd1vCP1hT/isSc/Dh0k0FkGB/ZrAuIB8fesaoSelQ==
-
-xterm@^4.13.0:
-  version "4.13.0"
-  resolved "https://registry.yarnpkg.com/xterm/-/xterm-4.13.0.tgz#7998de1e2ad92c4796fe45807be4f31061f3d9d1"
-  integrity sha512-HVW1gdoLOTnkMaqQCr2r3mQy4fX9iSa5gWxKZ2UTYdLa4iqavv7QxJ8n1Ypse32shPVkhTYPLS6vHEFZp5ghzw==
 
 yauzl@^2.10.0:
   version "2.10.0"
