@@ -3,11 +3,11 @@ const fs = require('fs')
 const mkdirp = require('mkdirp')
 const { Terminal } = require('xterm-headless/')
 
-const TESTER_SHELL_COMMAND =
-  process.env.TESTER_SHELL_COMMAND ||
-  'docker run -h test --init -ti --rm dotfiles_shell fish'
-
 class ShellTester {
+  constructor({ shellCommand = process.env.SHELL || 'sh' } = {}) {
+    this._shellCommand = shellCommand
+  }
+
   _sessionsDefinitions = []
 
   /**
@@ -33,10 +33,9 @@ class ShellTester {
   }
 
   async _runSession({ name, callback }) {
-    const command = TESTER_SHELL_COMMAND
     const cols = 80
     const rows = 16
-    const ptyProcess = pty.spawn('bash', ['-c', command], {
+    const ptyProcess = pty.spawn('bash', ['-c', this._shellCommand], {
       cols,
       rows,
       name: 'xterm-color',

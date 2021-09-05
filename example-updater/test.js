@@ -1,6 +1,12 @@
 const { ShellTester } = require('./lib')
 
-const tester = new ShellTester()
+const TESTER_SHELL_COMMAND =
+  process.env.TESTER_SHELL_COMMAND ||
+  'docker run -h test --init -ti --rm dotfiles_shell fish'
+
+const tester = new ShellTester({
+  shellCommand: TESTER_SHELL_COMMAND,
+})
 
 tester.session('basic', async (s) => {
   await s.expect(s.prompt)
