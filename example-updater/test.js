@@ -45,4 +45,12 @@ tester.session('fzf', async (s) => {
   await s.capture('fzf')
 })
 
+tester.session('update_dotfiles', async (s) => {
+  await s.resize(80, 40)
+  await s.expect(s.prompt)
+  await s.send('update_dotfiles\r')
+  await s.expect('All tasks executed successfully')
+  await s.capture('update_dotfiles')
+})
+
 tester.run()

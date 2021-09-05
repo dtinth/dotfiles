@@ -21,3 +21,9 @@ image::{example-base}basic.png[link="{example-base}basic.txt"]
 https://github.com/junegunn/fzf[fzf] provides a fuzzy finder for the shell. Activate by pressing kbd:[Ctrl+R]
 
 image::{example-base}fzf.png[link="{example-base}fzf.txt"]
+
+== Updating
+
+Running `update_dotfiles` command in the Fish shell will update all dotfiles from the GitHub repository.
+
+image::{example-base}update_dotfiles.png[link="{example-base}update_dotfiles.txt"]

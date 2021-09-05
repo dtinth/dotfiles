@@ -95,9 +95,10 @@ class ShellSession {
     })
   }
 
-  async resize(rows, cols) {
+  async resize(cols, rows) {
     await this._stabilizer.waitUntilStabilized()
     this._ptyProcess.resize(cols, rows)
+    this._term.resize(cols, rows)
     this._events.push({
       time: Date.now(),
       type: 'resize',
@@ -165,7 +166,7 @@ class ShellSession {
     const buffer = term.buffer.active
     for (let i = 0; i < rows; i++) {
       const line = buffer.getLine(i + buffer.viewportY)
-      const lineString = line.translateToString()
+      const lineString = line?.translateToString() || ' '.repeat(cols)
       text.push(lineString)
       console.log('|' + lineString + '|')
     }
