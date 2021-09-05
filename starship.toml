@@ -1,3 +1,14 @@
+
+[username]
+format = "[$user]($style)[@](fg:#8b8685)"
+show_always = true
+style_user = "#bbeeff"
+
+[hostname]
+format = "[$hostname]($style)[:](fg:#8b8685)"
+ssh_only = false
+style = "#ffffaa"
+
 [directory]
 truncate_to_repo = false
 style = "fg:#bbeeff"
@@ -11,19 +22,6 @@ format = "[#](fg:#8b8685)[$symbol$branch]($style) "
 commit_hash_length = 4
 tag_symbol = "[@](fg:#8b8685)"
 
-[cmd_duration]
-format = "[took](fg:#8b8685) [$duration]($style) "
-
-[username]
-format = "[$user]($style)[@](fg:#8b8685)"
-show_always = true
-style_user = "#bbeeff"
-
-[hostname]
-format = "[$hostname]($style)[:](fg:#8b8685)"
-ssh_only = false
-style = "#ffffaa"
-
 [package]
 style = "fg:#8b8685"
 format = "[package@$version]($style) "
@@ -31,3 +29,6 @@ format = "[package@$version]($style) "
 [nodejs]
 style = "fg:#8b8685"
 format = "[node(@$version)]($style) "
+
+[cmd_duration]
+format = "[took](fg:#8b8685) [$duration]($style) "
