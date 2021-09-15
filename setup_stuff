@@ -1,5 +1,6 @@
 #!/bin/bash
 set -eo pipefail
+ARCH=$(uname -m)
 
 main() {
   ensure  check_fish      install_fish
@@ -36,6 +37,8 @@ check_starship() {
 install_starship() {
   if command_exists brew; then
     brew install starship
+  elif test -n "$PREFIX" && test "$ARCH" = aarch64; then
+    sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y --bin-dir "$PREFIX/bin"
   else
     sudo sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
   fi
@@ -65,6 +68,8 @@ check_gh() {
 install_gh() {
   if command_exists brew; then
     brew install gh
+  elif command_exists pkg; then
+    pkg install gh -y
   elif command_exists apt-get; then
     curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
@@ -79,6 +84,8 @@ check_bat() {
 install_bat() {
   if command_exists brew; then
     brew install bat
+  elif command_exists pkg; then
+    pkg install bat -y
   elif command_exists apt-get; then
     wget -O/tmp/bat.deb https://github.com/sharkdp/bat/releases/download/v0.18.3/bat_0.18.3_amd64.deb
     install_apt_package /tmp/bat.deb
@@ -112,7 +119,7 @@ command_exists() {
 apt_updated=
 install_apt_package() {
   if [ -z "$apt_updated" ]; then
-    sudo apt-get update
+    sudo apt-get update || true
     apt_updated=1
   fi
   sudo apt-get install -y "$@"
