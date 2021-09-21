@@ -4,17 +4,17 @@ tester@test:/dotfiles🔒 #master
 ✦ ❯ update_dotfiles
 Already up to date.
 All targets have been cleaned
-Globs from 'fish/**/*.fish': ['fish/conf.d/starship.fish', 'fish/functions/updat
-e_dotfiles.fish', 'fish/functions/fish_user_key_bindings.fish', 'fish/functions/
-fzf_key_bindings.fish']
+Globs from 'fish/**/*.fish': ['fish/conf.d/starship.fish', 'fish/functions/fzf_k
+ey_bindings.fish', 'fish/functions/fish_user_key_bindings.fish', 'fish/functions
+/update_dotfiles.fish']
 Link exists ~/.config/fish/conf.d/starship.fish -> /dotfiles/fish/conf.d/starshi
 p.fish
-Link exists ~/.config/fish/functions/update_dotfiles.fish -> /dotfiles/fish/func
-tions/update_dotfiles.fish
-Link exists ~/.config/fish/functions/fish_user_key_bindings.fish -> /dotfiles/fi
-sh/functions/fish_user_key_bindings.fish
 Link exists ~/.config/fish/functions/fzf_key_bindings.fish -> /dotfiles/fish/fun
 ctions/fzf_key_bindings.fish
+Link exists ~/.config/fish/functions/fish_user_key_bindings.fish -> /dotfiles/fi
+sh/functions/fish_user_key_bindings.fish
+Link exists ~/.config/fish/functions/update_dotfiles.fish -> /dotfiles/fish/func
+tions/update_dotfiles.fish
 Link exists ~/.config/starship.toml -> /dotfiles/starship.toml
 All links have been set up
 bash -e setup_stuff
