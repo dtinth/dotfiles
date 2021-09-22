@@ -2,7 +2,7 @@ const { ShellTester } = require('shell-tester')
 
 const TESTER_SHELL_COMMAND =
   process.env.TESTER_SHELL_COMMAND ||
-  'docker run -h test --init -ti --rm dotfiles_shell fish'
+  'docker run -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -h test --init -ti --rm dotfiles_shell fish'
 
 const PROMPT = '❯'
 
@@ -59,6 +59,16 @@ tester.session('update_dotfiles', async (s) => {
   await s.send('update_dotfiles\r')
   await s.expect('All tasks executed successfully')
   await s.capture('update_dotfiles')
+})
+
+tester.session('nvim', async (s) => {
+  await s.resize(80, 24)
+  await s.expect(PROMPT)
+  await s.send('tmux\r')
+  await s.expect('[0]')
+  await s.send('vim\r')
+  await s.expect('NVIM')
+  await s.capture('nvim')
 })
 
 tester.run()
