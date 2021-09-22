@@ -1,4 +1,4 @@
-FROM buildpack-deps:buster
+FROM buildpack-deps:buster AS base
 
 RUN apt-get update && apt-get install -y sudo && apt-get clean && rm -rf /var/lib/apt/lists/*
 
@@ -9,3 +9,7 @@ USER user
 WORKDIR /dotfiles
 COPY --chown=user:user ./ ./
 RUN ./install
+
+FROM base
+
+RUN apt-get update && apt-get install -y tmux vim htop build-essential
