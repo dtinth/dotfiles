@@ -12,4 +12,4 @@ RUN ./install
 
 FROM base
 
-RUN sudo apt-get update && sudo apt-get install -y tmux vim htop build-essential
+RUN sudo apt-get update && sudo apt-get install -y tmux neovim htop build-essential
