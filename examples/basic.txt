@@ -1,13 +1,13 @@
 Welcome to fish, the friendly interactive shell
 
-user@test:/dotfiles🔒 #devenv
+user@test:/dotfiles🔒 #devenv [✘]
 ✦ ❯ ls
-Dockerfile          docs/             fish/              raycast/
 LICENSE.md          dotbot/           install*           setup_stuff
 README.md           example-updater/  install.conf.yaml  starship.toml
 docker-compose.yml  examples/         install.ps1
+docs/               fish/             raycast/
 
-user@test:/dotfiles🔒 #devenv
+user@test:/dotfiles🔒 #devenv [✘]
 ✦ ❯ cd
 
 user@test:~
