@@ -1,6 +1,6 @@
-Resolving deltas: 100% (180/180), completed with 21 local objects.
-From https://github.com/dtinth/dotfiles
- * [new branch]      master     -> origin/master
+
+user@test:/dotfiles🔒 #master [✘]
+✦ ❯ update_dotfiles
 Already up to date.
 All targets have been cleaned
 Globs from 'fish/**/*.fish': ['fish/conf.d/variables.fish', 'fish/conf.d/abbrevi
@@ -36,5 +36,5 @@ All commands have been executed
 
 ==> All tasks executed successfully
 
-user@test:/dotfiles🔒 #devenv [✘]
+user@test:/dotfiles🔒 #master [✘]
 ✦ ❯

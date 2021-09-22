@@ -1,5 +1,5 @@
 
-user@test:/dotfiles🔒 #devenv [✘]
+user@test:/dotfiles🔒 #master [✘]
 
 
 
