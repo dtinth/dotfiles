@@ -23,7 +23,7 @@ const response = execSync(
   {
     input: JSON.stringify({
       key: credentials.key,
-      text: process.argv[2],
+      text: process.argv.slice(2).join(' '),
       source: 'raycast',
     }),
     encoding: 'utf8',
