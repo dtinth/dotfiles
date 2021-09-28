@@ -87,7 +87,11 @@ install_bat() {
   elif command_exists pkg; then
     pkg install bat -y
   elif command_exists apt-get; then
-    wget -O/tmp/bat.deb https://github.com/sharkdp/bat/releases/download/v0.18.3/bat_0.18.3_amd64.deb
+    if test "$ARCH" = armv7l; then
+      wget -O/tmp/bat.deb https://github.com/sharkdp/bat/releases/download/v0.18.3/bat_0.18.3_armhf.deb
+    else
+      wget -O/tmp/bat.deb https://github.com/sharkdp/bat/releases/download/v0.18.3/bat_0.18.3_amd64.deb
+    fi
     install_apt_package /tmp/bat.deb
   fi
   if ! command_exists bat && test -f /usr/bin/batcat; then
