@@ -13,12 +13,12 @@
 ~                type  :q<Enter>               to exit
 ~                type  :help<Enter>            for help
 ~
-~                        Help poor children in Uganda!
-~                type  :help iccf<Enter>       for information
+~                        Become a registered Vim user!
+~                type  :help register<Enter>   for information
 ~
 ~
 ~
 ~
 [No Name]                                                     0,0-1          All
 
-[0] 0:bash*                                               "test" 14:12 22-Sep-21
+[0] 0:bash*                                               "test" 12:27 01-Oct-21

@@ -1,18 +1,18 @@
-
-user@test:/dotfiles🔒 #master [✘]
 ✦ ❯ update_dotfiles
 Already up to date.
 All targets have been cleaned
 Globs from 'fish/**/*.fish': ['fish/conf.d/variables.fish', 'fish/conf.d/abbrevi
-ations.fish', 'fish/conf.d/starship.fish', 'fish/functions/fzf_key_bindings.fish
-', 'fish/functions/devenv.fish', 'fish/functions/fish_user_key_bindings.fish', '
-fish/functions/a,.fish', 'fish/functions/update_dotfiles.fish']
+ations.fish', 'fish/conf.d/starship.fish', 'fish/conf.d/path.fish', 'fish/functi
+ons/fzf_key_bindings.fish', 'fish/functions/devenv.fish', 'fish/functions/fish_u
+ser_key_bindings.fish', 'fish/functions/a,.fish', 'fish/functions/update_dotfile
+s.fish']
 Link exists ~/.config/fish/conf.d/variables.fish -> /dotfiles/fish/conf.d/variab
 les.fish
 Link exists ~/.config/fish/conf.d/abbreviations.fish -> /dotfiles/fish/conf.d/ab
 breviations.fish
 Link exists ~/.config/fish/conf.d/starship.fish -> /dotfiles/fish/conf.d/starshi
 p.fish
+Link exists ~/.config/fish/conf.d/path.fish -> /dotfiles/fish/conf.d/path.fish
 Link exists ~/.config/fish/functions/fzf_key_bindings.fish -> /dotfiles/fish/fun
 ctions/fzf_key_bindings.fish
 Link exists ~/.config/fish/functions/devenv.fish -> /dotfiles/fish/functions/dev
