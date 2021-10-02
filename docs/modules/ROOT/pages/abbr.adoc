@@ -1,0 +1,8 @@
+= Shell Abbreviations
+
+Shell abbreviations come from these sources:
+
+* https://github.com/jhillyerd/plugin-git[jhillyerd/plugin-git]
+* https://github.com/dtinth/dotfiles/blob/master/fish/conf.d/abbreviations.fish[abbreviations.fish]
+
+include::partial$abbr.adoc[] 
