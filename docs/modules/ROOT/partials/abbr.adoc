@@ -2,6 +2,9 @@
 |===
 |Expansion |Name
 
+|``docker-compose exec``
+|``dcx``
+
 |``docker-compose logs --tail=100 --follow --timestamps``
 |``dcl``
 

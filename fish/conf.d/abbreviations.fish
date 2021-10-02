@@ -11,5 +11,6 @@ end
 
 if command -v docker-compose 1>/dev/null 2>&1
     abbr --add dcu "docker-compose up --detach"
+    abbr --add dcx "docker-compose exec"
     abbr --add dcl "docker-compose logs --tail=100 --follow --timestamps"
 end
