@@ -2,6 +2,11 @@
 set -eo pipefail
 ARCH=$(uname -m)
 
+if test -e /opt/homebrew/bin
+then
+  PATH=/opt/homebrew/bin:$PATH
+fi
+
 main() {
   ensure  check_fish      install_fish
   ensure  check_fisher    install_fisher
