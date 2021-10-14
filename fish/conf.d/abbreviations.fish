@@ -6,7 +6,7 @@ if command -v systemctl 1>/dev/null 2>&1
     abbr --add sc "sudo systemctl"
     abbr --add scu "systemctl --user"
     abbr --add jc "sudo journalctl --unit"
-    abbr --add jcu "journalctl --user"
+    abbr --add jcu "journalctl --user --unit"
 end
 
 if command -v docker-compose 1>/dev/null 2>&1
