@@ -13,12 +13,12 @@
 ~                type  :q<Enter>               to exit
 ~                type  :help<Enter>            for help
 ~
-~                           Sponsor Vim development!
-~                type  :help sponsor<Enter>    for information
+~                        Become a registered Vim user!
+~                type  :help register<Enter>   for information
 ~
 ~
 ~
 ~
 [No Name]                                                     0,0-1          All
 
-[0] 0:bash*                                               "test" 12:58 02-Oct-21
+[0] 0:bash*                                               "test" 18:35 14-Oct-21
