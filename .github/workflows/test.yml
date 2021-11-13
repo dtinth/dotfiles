@@ -22,6 +22,8 @@ jobs:
           tags: devenv:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
+      - name: Show image history
+        run: docker history devenv
       - name: Install dependencies for running tests
         run: yarn --cwd=example-updater
       - name: Run tests
