@@ -1,7 +1,7 @@
-remote: Compressing objects: 100% (234/234), done.
-remote: Total 484 (delta 240), reused 450 (delta 207), pack-reused 0
-Receiving objects: 100% (484/484), 1.04 MiB | 15.18 MiB/s, done.
-Resolving deltas: 100% (240/240), completed with 25 local objects.
+remote: Compressing objects: 100% (232/232), done.
+remote: Total 484 (delta 239), reused 453 (delta 209), pack-reused 0
+Receiving objects: 100% (484/484), 1.04 MiB | 5.65 MiB/s, done.
+Resolving deltas: 100% (239/239), completed with 24 local objects.
 From https://github.com/dtinth/dotfiles
  * [new branch]      master     -> origin/master
 Already up to date.
@@ -36,5 +36,5 @@ All commands have been executed
 
 ==> All tasks executed successfully
 
-user@test:/dotfiles #direnv [✘] took 2s
+user@test:/dotfiles #direnv [✘] took 3s
 ✦ ❯
