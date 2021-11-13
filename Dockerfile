@@ -13,6 +13,7 @@ COPY --chown=user:user ./install ./install.conf.yaml ./setup_stuff ./
 RUN touch ./starship.toml
 RUN ./install
 COPY --chown=user:user ./ ./
+RUN ./install
 
 FROM base
 

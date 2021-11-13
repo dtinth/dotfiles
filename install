@@ -9,8 +9,10 @@ DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 cd "${BASEDIR}"
-mkdir -p dotbot
-tar xvzf vendor/dotbot-043373ea74f85ff3c55a9c9f4eeb13ad7d694e71.tar.gz --strip-components=1 -C dotbot
-tar xvzf vendor/pyyaml-2f463cf5b0e98a52bc20e348d1e69761bf263b86.tar.gz --strip-components=1 -C dotbot/lib/pyyaml
+if [ ! -e dotbot ]; then
+  mkdir -p dotbot
+  tar xvzf vendor/dotbot-043373ea74f85ff3c55a9c9f4eeb13ad7d694e71.tar.gz --strip-components=1 -C dotbot
+  tar xvzf vendor/pyyaml-2f463cf5b0e98a52bc20e348d1e69761bf263b86.tar.gz --strip-components=1 -C dotbot/lib/pyyaml
+fi
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
