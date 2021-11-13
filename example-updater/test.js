@@ -2,7 +2,7 @@ const { ShellTester } = require('shell-tester')
 
 const TESTER_SHELL_COMMAND =
   process.env.TESTER_SHELL_COMMAND ||
-  'docker run -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -h test --init -ti --rm dotfiles_shell fish'
+  'docker run -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -h test --init -ti --rm devenv fish'
 
 const PROMPT = '❯'
 
@@ -69,6 +69,29 @@ tester.session('nvim', async (s) => {
   await s.send('vim\r')
   await s.expect('NVIM')
   await s.capture('nvim')
+})
+
+tester.session('envrc', async (s) => {
+  await s.resize(80, 20)
+
+  await s.expect(PROMPT)
+  await s.send(
+    'mkdir -p /tmp/envrc_test && echo "export ANS=42" >> /tmp/envrc_test/.envrc\r',
+  )
+  await s.expect('42')
+
+  await s.expect(PROMPT)
+  await s.send('cd /tmp/envrc_test\r')
+  await s.expect('direnv allow')
+
+  await s.expect(PROMPT)
+  await s.send('direnv allow\r')
+  await s.expect('ANS')
+
+  await s.expect(PROMPT)
+  await s.send('echo $ANS\r')
+  await s.expect('42')
+  await s.capture('envrc')
 })
 
 tester.run()

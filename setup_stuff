@@ -8,14 +8,31 @@ then
 fi
 
 main() {
+  ensure  check_direnv    install_direnv
   ensure  check_fish      install_fish
-  ensure  check_fisher    install_fisher
   ensure  check_starship  install_starship
   ensure  check_fzf       install_fzf
-  ensure  check_fish_git  install_fish_git
   ensure  check_gh        install_gh
   ensure  check_bat       install_bat
+  install_enqueued_apt_packages
+  recheck_commands
+
+  ensure  check_fisher    install_fisher
+  ensure  check_fish_git  install_fish_git
+  recheck_commands
+
   setup_git_config
+}
+
+check_direnv() {
+  command_exists direnv
+}
+install_direnv() {
+  if command_exists brew; then
+    brew install direnv
+  elif command_exists apt-get; then
+    install_apt_package direnv
+  fi
 }
 
 check_fish() {
@@ -109,29 +126,42 @@ setup_git_config() {
   git config --global pull.ff only
 }
 
+commands_to_recheck=()
 ensure() {
   if ! "$1"; then
     echo >&2 "=> $1 failed, running $2..."
     "$2"
   fi
-  if ! "$1"; then
-    echo >&2 "!! $1 still failed, aborted"
-    exit 1
-  fi
-  echo >&2 "=> $1 passed"
+  commands_to_recheck+=("$1")
+}
+recheck_commands() {
+  for command in "${commands_to_recheck[@]}"; do
+    if ! "$command"; then
+      echo >&2 "=> $command failed, exiting..."
+      exit 1
+    fi
+  done
+  commands_to_recheck=()
 }
 
 command_exists() {
   command -v "$1" >/dev/null 2>&1
 }
 
+apt_packages_to_install=()
 apt_updated=
 install_apt_package() {
   if [ -z "$apt_updated" ]; then
     sudo apt-get update || true
     apt_updated=1
   fi
-  sudo apt-get install -y "$@"
+  apt_packages_to_install+=("$1")
+}
+install_enqueued_apt_packages() {
+  if [ "${#apt_packages_to_install[@]}" -gt 0 ]; then
+    sudo apt-get install -y "${apt_packages_to_install[@]}"
+    apt_packages_to_install=()
+  fi
 }
 
 main

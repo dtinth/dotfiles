@@ -1,39 +1,40 @@
-
-user@test:/dotfiles🔒 #master [✘]
-✦ ❯ update_dotfiles
+remote: Compressing objects: 100% (231/231), done.
+remote: Total 484 (delta 239), reused 454 (delta 210), pack-reused 0
+Receiving objects: 100% (484/484), 1.04 MiB | 19.32 MiB/s, done.
+Resolving deltas: 100% (239/239), completed with 24 local objects.
+From https://github.com/dtinth/dotfiles
+ * [new branch]      master     -> origin/master
 Already up to date.
 All targets have been cleaned
-Globs from 'fish/**/*.fish': ['fish/conf.d/path.fish', 'fish/conf.d/variables.fi
-sh', 'fish/conf.d/abbreviations.fish', 'fish/conf.d/starship.fish', 'fish/functi
-ons/a,.fish', 'fish/functions/fish_user_key_bindings.fish', 'fish/functions/deve
-nv.fish', 'fish/functions/update_dotfiles.fish', 'fish/functions/fzf_key_binding
-s.fish']
-Link exists ~/.config/fish/conf.d/path.fish -> /dotfiles/fish/conf.d/path.fish
-Link exists ~/.config/fish/conf.d/variables.fish -> /dotfiles/fish/conf.d/variab
-les.fish
-Link exists ~/.config/fish/conf.d/abbreviations.fish -> /dotfiles/fish/conf.d/ab
-breviations.fish
-Link exists ~/.config/fish/conf.d/starship.fish -> /dotfiles/fish/conf.d/starshi
-p.fish
+Globs from 'fish/**/*.fish': ['fish/functions/a,.fish', 'fish/functions/fzf_key_
+bindings.fish', 'fish/functions/devenv.fish', 'fish/functions/fish_user_key_bind
+ings.fish', 'fish/functions/update_dotfiles.fish', 'fish/conf.d/variables.fish',
+ 'fish/conf.d/starship.fish', 'fish/conf.d/abbreviations.fish', 'fish/conf.d/pat
+h.fish', 'fish/conf.d/direnv.fish']
 Link exists ~/.config/fish/functions/a,.fish -> /dotfiles/fish/functions/a,.fish
-Link exists ~/.config/fish/functions/fish_user_key_bindings.fish -> /dotfiles/fi
-sh/functions/fish_user_key_bindings.fish
-Link exists ~/.config/fish/functions/devenv.fish -> /dotfiles/fish/functions/dev
-env.fish
-Link exists ~/.config/fish/functions/update_dotfiles.fish -> /dotfiles/fish/func
-tions/update_dotfiles.fish
 Link exists ~/.config/fish/functions/fzf_key_bindings.fish -> /dotfiles/fish/fun
 ctions/fzf_key_bindings.fish
+Link exists ~/.config/fish/functions/devenv.fish -> /dotfiles/fish/functions/dev
+env.fish
+Link exists ~/.config/fish/functions/fish_user_key_bindings.fish -> /dotfiles/fi
+sh/functions/fish_user_key_bindings.fish
+Link exists ~/.config/fish/functions/update_dotfiles.fish -> /dotfiles/fish/func
+tions/update_dotfiles.fish
+Link exists ~/.config/fish/conf.d/variables.fish -> /dotfiles/fish/conf.d/variab
+les.fish
+Link exists ~/.config/fish/conf.d/starship.fish -> /dotfiles/fish/conf.d/starshi
+p.fish
+Link exists ~/.config/fish/conf.d/abbreviations.fish -> /dotfiles/fish/conf.d/ab
+breviations.fish
+Link exists ~/.config/fish/conf.d/path.fish -> /dotfiles/fish/conf.d/path.fish
+Link exists ~/.config/fish/conf.d/direnv.fish -> /dotfiles/fish/conf.d/direnv.fi
+sh
 Link exists ~/.config/starship.toml -> /dotfiles/starship.toml
 All links have been set up
 bash -e setup_stuff
-=> check_fish passed
-=> check_fisher passed
-=> check_starship passed
-=> check_fzf passed
-=> check_fish_git passed
-=> check_gh passed
-=> check_bat passed
 All commands have been executed
 
 ==> All tasks executed successfully
+
+user@test:/dotfiles #direnv [✘] took 3s
+✦ ❯
