@@ -33,6 +33,3 @@ bash -e setup_stuff
 All commands have been executed
 
 ==> All tasks executed successfully
-
-user@test:/dotfiles #master [✘] took 2s
-✦ ❯
