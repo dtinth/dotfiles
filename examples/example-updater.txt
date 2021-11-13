@@ -1,4 +1,4 @@
-user@test:/dotfiles🔒 #direnv [✘]
+user@test:/dotfiles #direnv [✘]
 ✦ ❯ bat example-updater/test.js -r :8 && sleep inf
 ───────┬────────────────────────────────────────────────────────────────────────
        │ File: example-updater/test.js
@@ -8,7 +8,7 @@ user@test:/dotfiles🔒 #direnv [✘]
    3   │ const TESTER_SHELL_COMMAND =
    4   │   process.env.TESTER_SHELL_COMMAND ||
    5   │   'docker run -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/
-       │ docker:/usr/bin/docker -h test --init -ti --rm dotfiles_shell fish'
+       │ docker:/usr/bin/docker -h test --init -ti --rm devenv fish'
    6   │
    7   │ const PROMPT = '❯'
    8   │

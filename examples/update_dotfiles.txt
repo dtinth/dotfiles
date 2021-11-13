@@ -1,3 +1,9 @@
+remote: Compressing objects: 100% (234/234), done.
+remote: Total 484 (delta 240), reused 450 (delta 207), pack-reused 0
+Receiving objects: 100% (484/484), 1.04 MiB | 15.18 MiB/s, done.
+Resolving deltas: 100% (240/240), completed with 25 local objects.
+From https://github.com/dtinth/dotfiles
+ * [new branch]      master     -> origin/master
 Already up to date.
 All targets have been cleaned
 Globs from 'fish/**/*.fish': ['fish/functions/a,.fish', 'fish/functions/fzf_key_
@@ -26,14 +32,9 @@ sh
 Link exists ~/.config/starship.toml -> /dotfiles/starship.toml
 All links have been set up
 bash -e setup_stuff
-=> check_direnv passed
-=> check_fish passed
-=> check_fisher passed
-=> check_starship passed
-=> check_fzf passed
-=> check_fish_git passed
-=> check_gh passed
-=> check_bat passed
 All commands have been executed
 
 ==> All tasks executed successfully
+
+user@test:/dotfiles #direnv [✘] took 2s
+✦ ❯
