@@ -2,7 +2,7 @@ const { ShellTester } = require('shell-tester')
 
 const TESTER_SHELL_COMMAND =
   process.env.TESTER_SHELL_COMMAND ||
-  'docker run -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -h test --init -ti --rm dotfiles_shell fish'
+  'docker run -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -h test --init -ti --rm devenv fish'
 
 const PROMPT = '❯'
 
