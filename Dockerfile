@@ -7,8 +7,12 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER user
 
 WORKDIR /dotfiles
-COPY --chown=user:user ./ ./
+COPY --chown=user:user ./vendor/*.tar.gz ./vendor/
+COPY --chown=user:user ./fish/ ./fish/
+COPY --chown=user:user ./install ./install.conf.yaml ./setup_stuff ./
+RUN touch ./starship.toml
 RUN ./install
+COPY --chown=user:user ./ ./
 
 FROM base
 
