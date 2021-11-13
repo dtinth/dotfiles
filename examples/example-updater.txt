@@ -1,4 +1,4 @@
-user@test:/dotfiles #direnv [✘]
+user@test:/dotfiles #master [✘]
 ✦ ❯ bat example-updater/test.js -r :8 && sleep inf
 ───────┬────────────────────────────────────────────────────────────────────────
        │ File: example-updater/test.js

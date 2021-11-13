@@ -1,9 +1,9 @@
 
-user@test:/dotfiles #direnv [✘]
+user@test:/dotfiles #master [✘]
 ✦ ❯ mkdir -p /tmp/envrc_test && echo "export ANS=42" >> /tmp/envrc_test/.envrc
 
 
-user@test:/dotfiles #direnv [✘]
+user@test:/dotfiles #master [✘]
 ✦ ❯ cd /tmp/envrc_test
 direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
 

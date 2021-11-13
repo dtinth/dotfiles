@@ -1,9 +1,7 @@
-remote: Compressing objects: 100% (231/231), done.
-remote: Total 484 (delta 239), reused 454 (delta 210), pack-reused 0
-Receiving objects: 100% (484/484), 1.04 MiB | 19.32 MiB/s, done.
-Resolving deltas: 100% (239/239), completed with 24 local objects.
-From https://github.com/dtinth/dotfiles
- * [new branch]      master     -> origin/master
+Welcome to fish, the friendly interactive shell
+
+user@test:/dotfiles #master [✘]
+✦ ❯ update_dotfiles
 Already up to date.
 All targets have been cleaned
 Globs from 'fish/**/*.fish': ['fish/functions/a,.fish', 'fish/functions/fzf_key_
@@ -36,5 +34,5 @@ All commands have been executed
 
 ==> All tasks executed successfully
 
-user@test:/dotfiles #direnv [✘] took 3s
+user@test:/dotfiles #master [✘] took 3s
 ✦ ❯

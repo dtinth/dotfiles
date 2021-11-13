@@ -1,13 +1,13 @@
 Welcome to fish, the friendly interactive shell
 
-user@test:/dotfiles #direnv [✘]
+user@test:/dotfiles #master [✘]
 ✦ ❯ ls
 LICENSE.md          dotbot/           install*           setup_stuff
 README.md           example-updater/  install.conf.yaml  starship.toml
 docker-compose.yml  examples/         install.ps1        vendor/
 docs/               fish/             raycast/
 
-user@test:/dotfiles #direnv [✘]
+user@test:/dotfiles #master [✘]
 ✦ ❯ cd
 
 user@test:~

@@ -1,5 +1,5 @@
 
-user@test:/dotfiles #direnv [✘]
+user@test:/dotfiles #master [✘]
 
 
 
