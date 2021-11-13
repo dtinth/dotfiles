@@ -71,4 +71,27 @@ tester.session('nvim', async (s) => {
   await s.capture('nvim')
 })
 
+tester.session('envrc', async (s) => {
+  await s.resize(80, 20)
+
+  await s.expect(PROMPT)
+  await s.send(
+    'mkdir -p /tmp/envrc_test && echo "export ANS=42" >> /tmp/envrc_test/.envrc\r',
+  )
+  await s.expect('42')
+
+  await s.expect(PROMPT)
+  await s.send('cd /tmp/envrc_test\r')
+  await s.expect('direnv allow')
+
+  await s.expect(PROMPT)
+  await s.send('direnv allow\r')
+  await s.expect('ANS')
+
+  await s.expect(PROMPT)
+  await s.send('echo $ANS\r')
+  await s.expect('42')
+  await s.capture('envrc')
+})
+
 tester.run()
