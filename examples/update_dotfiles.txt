@@ -34,5 +34,5 @@ All commands have been executed
 
 ==> All tasks executed successfully
 
-user@test:/dotfiles #master [✘] took 3s
+user@test:/dotfiles #master [✘] took 2s
 ✦ ❯
