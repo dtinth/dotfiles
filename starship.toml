@@ -43,3 +43,6 @@ format = "[node(@$version)]($style) "
 [cmd_duration]
 # format = "[took](fg:#8b8685) [$duration]($style) "
 format = "[took](fg:102) [$duration]($style) "
+
+[gcloud]
+disabled = true
