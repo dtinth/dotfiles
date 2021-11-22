@@ -111,6 +111,8 @@ install_bat() {
   elif command_exists apt-get; then
     if test "$ARCH" = armv7l; then
       wget -O/tmp/bat.deb https://github.com/sharkdp/bat/releases/download/v0.18.3/bat_0.18.3_armhf.deb
+    elif test "$ARCH" = arm64; then
+      wget -O/tmp/bat.deb https://github.com/sharkdp/bat/releases/download/v0.18.3/bat_0.18.3_arm64.deb
     else
       wget -O/tmp/bat.deb https://github.com/sharkdp/bat/releases/download/v0.18.3/bat_0.18.3_amd64.deb
     fi
