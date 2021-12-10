@@ -1,35 +1,40 @@
-Welcome to fish, the friendly interactive shell
-
-user@test:/dotfiles #master [✘]
-✦ ❯ update_dotfiles
+devenv@test:~
+❯ update_dotfiles
+From https://github.com/dtinth/dotfiles
+ * branch            master     -> FETCH_HEAD
 Already up to date.
 All targets have been cleaned
-Globs from 'fish/**/*.fish': ['fish/functions/fzf_key_bindings.fish', 'fish/func
-tions/a,.fish', 'fish/functions/devenv.fish', 'fish/functions/update_dotfiles.fi
-sh', 'fish/functions/fish_user_key_bindings.fish', 'fish/conf.d/starship.fish',
-'fish/conf.d/direnv.fish', 'fish/conf.d/abbreviations.fish', 'fish/conf.d/variab
-les.fish', 'fish/conf.d/path.fish']
-Link exists ~/.config/fish/functions/fzf_key_bindings.fish -> /dotfiles/fish/fun
-ctions/fzf_key_bindings.fish
-Link exists ~/.config/fish/functions/a,.fish -> /dotfiles/fish/functions/a,.fish
-Link exists ~/.config/fish/functions/devenv.fish -> /dotfiles/fish/functions/dev
-env.fish
-Link exists ~/.config/fish/functions/update_dotfiles.fish -> /dotfiles/fish/func
-tions/update_dotfiles.fish
-Link exists ~/.config/fish/functions/fish_user_key_bindings.fish -> /dotfiles/fi
-sh/functions/fish_user_key_bindings.fish
-Link exists ~/.config/fish/conf.d/starship.fish -> /dotfiles/fish/conf.d/starshi
-p.fish
-Link exists ~/.config/fish/conf.d/direnv.fish -> /dotfiles/fish/conf.d/direnv.fi
-sh
-Link exists ~/.config/fish/conf.d/abbreviations.fish -> /dotfiles/fish/conf.d/ab
-breviations.fish
-Link exists ~/.config/fish/conf.d/variables.fish -> /dotfiles/fish/conf.d/variab
-les.fish
-Link exists ~/.config/fish/conf.d/path.fish -> /dotfiles/fish/conf.d/path.fish
-Link exists ~/.config/starship.toml -> /dotfiles/starship.toml
+Globs from 'fish/**/*.fish': ['fish/functions/fish_user_key_bindings.fish', 'fis
+h/functions/a,.fish', 'fish/functions/fzf_key_bindings.fish', 'fish/functions/de
+venv.fish', 'fish/functions/update_dotfiles.fish', 'fish/conf.d/abbreviations.fi
+sh', 'fish/conf.d/path.fish', 'fish/conf.d/starship.fish', 'fish/conf.d/direnv.f
+ish', 'fish/conf.d/variables.fish']
+Link exists ~/.config/fish/functions/fish_user_key_bindings.fish -> /home/devenv
+/dotfiles/fish/functions/fish_user_key_bindings.fish
+Link exists ~/.config/fish/functions/a,.fish -> /home/devenv/dotfiles/fish/funct
+ions/a,.fish
+Link exists ~/.config/fish/functions/fzf_key_bindings.fish -> /home/devenv/dotfi
+les/fish/functions/fzf_key_bindings.fish
+Link exists ~/.config/fish/functions/devenv.fish -> /home/devenv/dotfiles/fish/f
+unctions/devenv.fish
+Link exists ~/.config/fish/functions/update_dotfiles.fish -> /home/devenv/dotfil
+es/fish/functions/update_dotfiles.fish
+Link exists ~/.config/fish/conf.d/abbreviations.fish -> /home/devenv/dotfiles/fi
+sh/conf.d/abbreviations.fish
+Link exists ~/.config/fish/conf.d/path.fish -> /home/devenv/dotfiles/fish/conf.d
+/path.fish
+Link exists ~/.config/fish/conf.d/starship.fish -> /home/devenv/dotfiles/fish/co
+nf.d/starship.fish
+Link exists ~/.config/fish/conf.d/direnv.fish -> /home/devenv/dotfiles/fish/conf
+.d/direnv.fish
+Link exists ~/.config/fish/conf.d/variables.fish -> /home/devenv/dotfiles/fish/c
+onf.d/variables.fish
+Link exists ~/.config/starship.toml -> /home/devenv/dotfiles/starship.toml
 All links have been set up
 bash -e setup_stuff
 All commands have been executed
 
 ==> All tasks executed successfully
+
+devenv@test:~
+❯

@@ -1,12 +1,12 @@
 
-user@test:/dotfiles #master [✘]
+devenv@test:~/dotfiles #updates [✘]
 
 
 
 
 
-  ls -lh
-  git status
+  ls -lh dotfiles
+  cd dotfiles && git status
 > clear
   3/3 +S
 >

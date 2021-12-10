@@ -1,7 +1,7 @@
-user@test:/dotfiles #master [✘]
-✦ ❯ bat example-updater/test.js -r :8 && sleep inf
+devenv@test:~
+❯ bat dotfiles/example-updater/test.js -r :8 && sleep inf
 ───────┬────────────────────────────────────────────────────────────────────────
-       │ File: example-updater/test.js
+       │ File: dotfiles/example-updater/test.js
 ───────┼────────────────────────────────────────────────────────────────────────
    1   │ const { ShellTester } = require('shell-tester')
    2   │
