@@ -1,20 +1,20 @@
 
-user@test:/dotfiles #master [✘]
-✦ ❯ mkdir -p /tmp/envrc_test && echo "export ANS=42" >> /tmp/envrc_test/.envrc
+devenv@test:~
+❯ mkdir -p /tmp/envrc_test && echo "export ANS=42" >> /tmp/envrc_test/.envrc
 
+devenv@test:~
+❯ cd /tmp/envrc_test
+direnv: error /tmp/envrc_test/.envrc is blocked. Run `direnv allow` to approve i
+ts content
 
-user@test:/dotfiles #master [✘]
-✦ ❯ cd /tmp/envrc_test
-direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
-
-user@test:/tmp/envrc_test
-✦ ❯ direnv allow
-direnv: loading .envrc
+devenv@test:/tmp/envrc_test
+❯ direnv allow
+direnv: loading /tmp/envrc_test/.envrc
 direnv: export +ANS
 
-user@test:/tmp/envrc_test
-✦ ❯ echo $ANS
+devenv@test:/tmp/envrc_test
+❯ echo $ANS
 42
 
-user@test:/tmp/envrc_test
-✦ ❯
+devenv@test:/tmp/envrc_test
+❯
