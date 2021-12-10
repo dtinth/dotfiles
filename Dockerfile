@@ -2,6 +2,8 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:bullseye
 
 RUN usermod --login devenv --move-home --home /home/devenv --append --groups sudo vscode && groupmod --new-name devenv vscode
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+  && apt-get -y install --no-install-recommends tmux neovim
 USER devenv
 
 WORKDIR /home/devenv/dotfiles
@@ -12,5 +14,6 @@ RUN touch ./starship.toml
 RUN ./install
 COPY --chown=devenv:devenv ./ ./
 RUN ./install
-
+RUN sudo usermod --shell /usr/bin/fish devenv
 WORKDIR /home/devenv
+CMD fish

@@ -12,7 +12,7 @@ const tester = new ShellTester({
 
 tester.session('basic', async (s) => {
   await s.expect(PROMPT)
-  await s.send('ls\r')
+  await s.send('ls dotfiles\r')
   await s.expect('README')
   await s.expect(PROMPT)
 
@@ -25,7 +25,7 @@ tester.session('basic', async (s) => {
 
 tester.session('bat', async (s) => {
   await s.expect(PROMPT)
-  await s.send('bat example-updater/test.js -r :8 && sleep inf\r')
+  await s.send('bat dotfiles/example-updater/test.js -r :8 && sleep inf\r')
   await s.expect('ShellTester')
   await s.capture('example-updater')
 })
@@ -33,11 +33,11 @@ tester.session('bat', async (s) => {
 tester.session('fzf', async (s) => {
   await s.expect(PROMPT)
 
-  await s.send('ls -lh\r')
+  await s.send('ls -lh dotfiles\r')
   await s.expect('README')
   await s.expect(PROMPT)
 
-  await s.send('gst\r')
+  await s.send('cd dotfiles && gst\r')
   await s.expect('branch')
   await s.expect(PROMPT)
 
