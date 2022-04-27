@@ -1,8 +1,12 @@
+abbr --add ef "exec fish"
+
 abbr --add r "npm run"
 abbr --add ya "yarn add"
 abbr --add yad "yarn add --dev"
 
 abbr --add rw "gh run-watch"
+
+abbr --add goh "git fetch && git checkout origin/HEAD"
 
 if command -v systemctl 1>/dev/null 2>&1
     abbr --add sc "sudo systemctl"

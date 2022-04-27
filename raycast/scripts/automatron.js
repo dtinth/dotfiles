@@ -24,7 +24,7 @@ const response = execSync(
     input: JSON.stringify({
       key: credentials.key,
       text: process.argv.slice(2).join(' '),
-      source: 'raycast',
+      source: process.env.AUTOMATRON_SOURCE || 'raycast',
     }),
     encoding: 'utf8',
   },
