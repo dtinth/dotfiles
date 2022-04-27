@@ -1,5 +1,5 @@
 devenv@test:~
-❯ bat dotfiles/example-updater/test.js -r :8 && sleep inf
+⬢ [Docker] ❯ bat dotfiles/example-updater/test.js -r :8 && sleep inf
 ───────┬────────────────────────────────────────────────────────────────────────
        │ File: dotfiles/example-updater/test.js
 ───────┼────────────────────────────────────────────────────────────────────────

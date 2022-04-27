@@ -1,30 +1,30 @@
-devenv@test:~
-❯ update_dotfiles
 From https://github.com/dtinth/dotfiles
  * branch            master     -> FETCH_HEAD
 Already up to date.
 All targets have been cleaned
-Globs from 'fish/**/*.fish': ['fish/functions/fish_user_key_bindings.fish', 'fis
-h/functions/a,.fish', 'fish/functions/fzf_key_bindings.fish', 'fish/functions/de
-venv.fish', 'fish/functions/update_dotfiles.fish', 'fish/conf.d/abbreviations.fi
-sh', 'fish/conf.d/path.fish', 'fish/conf.d/starship.fish', 'fish/conf.d/direnv.f
-ish', 'fish/conf.d/variables.fish']
-Link exists ~/.config/fish/functions/fish_user_key_bindings.fish -> /home/devenv
-/dotfiles/fish/functions/fish_user_key_bindings.fish
-Link exists ~/.config/fish/functions/a,.fish -> /home/devenv/dotfiles/fish/funct
-ions/a,.fish
+Globs from 'fish/**/*.fish': ['fish/functions/fzf_key_bindings.fish', 'fish/func
+tions/devenv.fish', 'fish/functions/qc.fish', 'fish/functions/update_dotfiles.fi
+sh', 'fish/functions/a,.fish', 'fish/functions/fish_user_key_bindings.fish', 'fi
+sh/conf.d/abbreviations.fish', 'fish/conf.d/starship.fish', 'fish/conf.d/path.fi
+sh', 'fish/conf.d/direnv.fish', 'fish/conf.d/variables.fish']
 Link exists ~/.config/fish/functions/fzf_key_bindings.fish -> /home/devenv/dotfi
 les/fish/functions/fzf_key_bindings.fish
 Link exists ~/.config/fish/functions/devenv.fish -> /home/devenv/dotfiles/fish/f
 unctions/devenv.fish
+Link exists ~/.config/fish/functions/qc.fish -> /home/devenv/dotfiles/fish/funct
+ions/qc.fish
 Link exists ~/.config/fish/functions/update_dotfiles.fish -> /home/devenv/dotfil
 es/fish/functions/update_dotfiles.fish
+Link exists ~/.config/fish/functions/a,.fish -> /home/devenv/dotfiles/fish/funct
+ions/a,.fish
+Link exists ~/.config/fish/functions/fish_user_key_bindings.fish -> /home/devenv
+/dotfiles/fish/functions/fish_user_key_bindings.fish
 Link exists ~/.config/fish/conf.d/abbreviations.fish -> /home/devenv/dotfiles/fi
 sh/conf.d/abbreviations.fish
-Link exists ~/.config/fish/conf.d/path.fish -> /home/devenv/dotfiles/fish/conf.d
-/path.fish
 Link exists ~/.config/fish/conf.d/starship.fish -> /home/devenv/dotfiles/fish/co
 nf.d/starship.fish
+Link exists ~/.config/fish/conf.d/path.fish -> /home/devenv/dotfiles/fish/conf.d
+/path.fish
 Link exists ~/.config/fish/conf.d/direnv.fish -> /home/devenv/dotfiles/fish/conf
 .d/direnv.fish
 Link exists ~/.config/fish/conf.d/variables.fish -> /home/devenv/dotfiles/fish/c
@@ -37,4 +37,4 @@ All commands have been executed
 ==> All tasks executed successfully
 
 devenv@test:~
-❯
+⬢ [Docker] ❯
