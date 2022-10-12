@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/vscode/devcontainers/base:bullseye
+FROM mcr.microsoft.com/devcontainers/base:bullseye
 
 RUN usermod --login devenv --move-home --home /home/devenv --append --groups sudo vscode && groupmod --new-name devenv vscode
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers

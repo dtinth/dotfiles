@@ -94,4 +94,21 @@ tester.session('envrc', async (s) => {
   await s.capture('envrc')
 })
 
+tester.session('pnpm', async (s) => {
+  await s.resize(80, 20)
+
+  await s.expect(PROMPT)
+  await s.send('node\r')
+  await s.expect('Unknown command')
+
+  await s.expect(PROMPT)
+  await s.send('pnpm env use --global lts\r')
+  await s.expect('is activated')
+
+  await s.expect(PROMPT)
+  await s.send('node\r')
+  await s.expect('Welcome')
+  await s.capture('pnpm')
+})
+
 tester.run()

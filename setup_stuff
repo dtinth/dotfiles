@@ -8,6 +8,7 @@ then
 fi
 
 main() {
+  ensure  check_pnpm      install_pnpm
   ensure  check_direnv    install_direnv
   ensure  check_fish      install_fish
   ensure  check_starship  install_starship
@@ -22,6 +23,18 @@ main() {
   recheck_commands
 
   setup_git_config
+}
+
+check_pnpm() {
+  command_exists pnpm || test -e ~/.local/share/pnpm
+}
+install_pnpm() {
+  if command_exists brew; then
+    brew install pnpm
+  else
+    curl -fsSL https://get.pnpm.io/install.sh | env SHELL=fish sh -
+    env SHELL=bash ~/.local/share/pnpm/pnpm setup
+  fi
 }
 
 check_direnv() {

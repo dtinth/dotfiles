@@ -1,6 +1,7 @@
 abbr --add ef "exec fish"
 
-abbr --add r "npm run"
+abbr --add r "pnpm run"
+abbr --add x "pnpm exec"
 abbr --add ya "yarn add"
 abbr --add yad "yarn add --dev"
 
