@@ -1,0 +1,19 @@
+Welcome to fish, the friendly interactive shell
+Type `help` for instructions on how to use fish
+
+devenv@test:~
+⬢ [Docker] ❯ node
+fish: Unknown command: node
+
+devenv@test:~
+⬢ [Docker] ❯ pnpm env use --global lts
+Fetching Node.js 16.17.1 ...
+Node.js 16.17.1 is activated
+  /home/devenv/.local/share/pnpm/node -> /home/devenv/.local/share/pnpm/nodejs/1
+6.17.1/bin/node
+
+devenv@test:~ took 5s
+⬢ [Docker] ❯ node
+Welcome to Node.js v16.17.1.
+Type ".help" for more information.
+>
