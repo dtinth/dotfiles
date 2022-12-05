@@ -1,5 +1,5 @@
 devenv@test:~
-⬢ [Docker] ❯ bat dotfiles/example-updater/test.js -r :8 && sleep inf
+⬢ [Docker] $ bat dotfiles/example-updater/test.js -r :8 && sleep inf
 ───────┬────────────────────────────────────────────────────────────────────────
        │ File: dotfiles/example-updater/test.js
 ───────┼────────────────────────────────────────────────────────────────────────
@@ -10,6 +10,6 @@ devenv@test:~
    5   │   'docker run -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/
        │ docker:/usr/bin/docker -h test --init -ti --rm devenv fish'
    6   │
-   7   │ const PROMPT = '❯'
+   7   │ const PROMPT = '$'
    8   │
 ───────┴────────────────────────────────────────────────────────────────────────
