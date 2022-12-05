@@ -2,18 +2,18 @@ Welcome to fish, the friendly interactive shell
 Type `help` for instructions on how to use fish
 
 devenv@test:~
-⬢ [Docker] ❯ node
+⬢ [Docker] $ node
 fish: Unknown command: node
 
 devenv@test:~
-⬢ [Docker] ❯ pnpm env use --global lts
+⬢ [Docker] $ pnpm env use --global lts
 Fetching Node.js 18.12.1 ...
 Node.js 18.12.1 is activated
-  /home/devenv/.local/share/pnpm/node -> /home/devenv/.local/share/pnpm/nodejs/1
-8.12.1/bin/node
+/home/devenv/.local/share/pnpm/node -> /home/devenv/.local/share/pnpm/nodejs/18.
+12.1/bin/node
 
-devenv@test:~ took 6s
-⬢ [Docker] ❯ node
+devenv@test:~ took 4s
+⬢ [Docker] $ node
 Welcome to Node.js v18.12.1.
 Type ".help" for more information.
 >

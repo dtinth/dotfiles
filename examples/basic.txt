@@ -2,14 +2,14 @@ Welcome to fish, the friendly interactive shell
 Type `help` for instructions on how to use fish
 
 devenv@test:~
-⬢ [Docker] ❯ ls dotfiles
+⬢ [Docker] $ ls dotfiles
 LICENSE.md          dotbot/           install*           setup_stuff
 README.md           example-updater/  install.conf.yaml  starship.toml
-docker-compose.yml  examples/         install.ps1        vendor/
-docs/               fish/             raycast/
+docker-compose.yml  examples/         install.ps1        tmux/
+docs/               fish/             raycast/           vendor/
 
 devenv@test:~
-⬢ [Docker] ❯ cd
+⬢ [Docker] $ cd
 
 devenv@test:~
-⬢ [Docker] ❯
+⬢ [Docker] $
