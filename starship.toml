@@ -1,3 +1,6 @@
+[character]
+success_symbol = "[\\$](bold green)"
+error_symbol = "[\\$](bold red)"
 
 [username]
 # format = "[$user]($style)[@](fg:#8b8685)"

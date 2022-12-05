@@ -23,6 +23,7 @@ main() {
   recheck_commands
 
   setup_git_config
+  setup_tmux_config
 }
 
 check_pnpm() {
@@ -139,6 +140,12 @@ install_bat() {
 setup_git_config() {
   # Only allow fast-forwards when pulling.
   git config --global pull.ff only
+}
+setup_tmux_config() {
+  # Load ~/dotfiles/tmux/tmux.conf
+  if ! grep -q 'source-file ~/dotfiles/tmux/tmux.conf' ~/.tmux.conf; then
+    echo 'source-file ~/dotfiles/tmux/tmux.conf' >> ~/.tmux.conf
+  fi
 }
 
 commands_to_recheck=()
