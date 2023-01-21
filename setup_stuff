@@ -140,6 +140,15 @@ install_bat() {
 setup_git_config() {
   # Only allow fast-forwards when pulling.
   git config --global pull.ff only
+
+  # Make the default branch name "main".
+  git config --global init.defaultBranch main
+
+  # If username and email are not set, set some defaults.
+  if ! git config --global --get user.name; then
+    git config --global user.name "dtinth on $(hostname)"
+    git config --global user.email "dtinth@users.noreply.github.com"
+  fi
 }
 setup_tmux_config() {
   # Load ~/dotfiles/tmux/tmux.conf
