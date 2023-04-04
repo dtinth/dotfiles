@@ -7,13 +7,13 @@ fish: Unknown command: node
 
 devenv@test:~
 ⬢ [Docker] $ pnpm env use --global lts
-Fetching Node.js 18.12.1 ...
-Node.js 18.12.1 is activated
+Fetching Node.js 18.15.0 ...
+Node.js 18.15.0 is activated
 /home/devenv/.local/share/pnpm/node -> /home/devenv/.local/share/pnpm/nodejs/18.
-12.1/bin/node
+15.0/bin/node
 
 devenv@test:~ took 4s
 ⬢ [Docker] $ node
-Welcome to Node.js v18.12.1.
+Welcome to Node.js v18.15.0.
 Type ".help" for more information.
 >
