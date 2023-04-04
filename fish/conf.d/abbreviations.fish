@@ -1,4 +1,6 @@
 abbr --add ef "exec fish"
+abbr --add hey "a, hey"
+abbr --add hmm "a, hmm"
 
 abbr --add r "pnpm run"
 abbr --add x "pnpm exec"
