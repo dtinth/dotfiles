@@ -5,6 +5,11 @@
       path: fish/**/*.fish
       force: true
       create: true
+    ~/.claude/commands:
+      glob: true
+      path: claude/commands
+      force: true
+      create: true
     ~/.config/starship.toml:
       path: starship.toml
       force: true
