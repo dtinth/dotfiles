@@ -13,12 +13,12 @@
 ~                type  :q<Enter>               to exit
 ~                type  :help<Enter>            for help
 ~
-~                           Sponsor Vim development!
-~                type  :help sponsor<Enter>    for information
+~                        Help poor children in Uganda!
+~                type  :help iccf<Enter>       for information
 ~
 ~
 ~
 ~
 [No Name]                                                     0,0-1          All
 
-[0] 0:fish*                                   "vim /home/devenv" 18:59 04-Apr-23
+[0] 0:fish*                                   "vim /home/devenv" 09:00 08-Jun-23
