@@ -5,9 +5,9 @@
       path: fish/**/*.fish
       force: true
       create: true
-    ~/.claude/commands:
+    ~/.claude/agents:
       glob: true
-      path: claude/commands
+      path: claude/agents/**.md
       force: true
       create: true
     ~/.config/starship.toml:
