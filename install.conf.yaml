@@ -10,6 +10,11 @@
       path: claude/agents/**.md
       force: true
       create: true
+    ~/.claude/skills:
+      glob: true
+      path: claude/skills/*
+      force: true
+      create: true
     ~/.config/starship.toml:
       path: starship.toml
       force: true
