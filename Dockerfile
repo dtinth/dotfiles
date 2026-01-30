@@ -20,7 +20,6 @@ USER devenv
 WORKDIR /home/devenv/dotfiles
 COPY --chown=devenv:devenv ./vendor/*.tar.gz ./vendor/
 COPY --chown=devenv:devenv ./fish/ ./fish/
-COPY --chown=devenv:devenv ./claude/ ./claude/
 COPY --chown=devenv:devenv ./install ./install.conf.yaml ./setup_stuff ./
 RUN touch ./starship.toml
 RUN ./install
