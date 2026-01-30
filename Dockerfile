@@ -12,9 +12,6 @@ COPY --chown=devenv:devenv ./vendor/*.tar.gz ./vendor/
 COPY --chown=devenv:devenv ./fish/ ./fish/
 COPY --chown=devenv:devenv ./install ./install.conf.yaml ./setup_stuff ./
 RUN touch ./starship.toml
-# Skip mise installation during Docker build
-RUN sed -i 's/ensure  check_mise/# ensure  check_mise/' ./setup_stuff
-RUN sed -i 's/install_mise_tools/# install_mise_tools/' ./setup_stuff
 ENV DOTFILES_BUILDING=1
 RUN ./install
 ENV DOTFILES_BUILDING=
