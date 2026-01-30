@@ -4,8 +4,7 @@ abbr --add hmm "a, hmm"
 
 abbr --add r "pnpm run"
 abbr --add x "pnpm exec"
-abbr --add ya "yarn add"
-abbr --add yad "yarn add --dev"
+
 
 abbr --add rw "gh run-watch"
 

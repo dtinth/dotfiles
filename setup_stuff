@@ -8,45 +8,71 @@ then
 fi
 
 main() {
-  ensure  check_pnpm      install_pnpm
-  ensure  check_direnv    install_direnv
-  ensure  check_fish      install_fish
-  ensure  check_starship  install_starship
-  ensure  check_fzf       install_fzf
-  ensure  check_gh        install_gh
-  ensure  check_bat       install_bat
+  ensure  check_mise       install_mise
+  ensure  check_fish       install_fish
   install_enqueued_apt_packages
   recheck_commands
 
-  ensure  check_fisher    install_fisher
-  ensure  check_fish_git  install_fish_git
+  install_mise_tools
+  recheck_commands
+  
+  ensure  check_fisher     install_fisher
+  ensure  check_fish_git   install_fish_git
   recheck_commands
 
   setup_git_config
   setup_tmux_config
 }
 
-check_pnpm() {
-  command_exists pnpm || test -e ~/.local/share/pnpm
+check_mise() {
+  command_exists mise
 }
-install_pnpm() {
+install_mise() {
   if command_exists brew; then
-    brew install pnpm
+    brew install mise
+  elif command_exists apt-get; then
+    install_apt_package curl
+    curl https://mise.run | bash
+  elif command_exists pkg; then
+    pkg install mise -y
   else
-    curl -fsSL https://get.pnpm.io/install.sh | env SHELL=fish sh -
-    env SHELL=bash ~/.local/share/pnpm/pnpm setup
+    curl https://mise.run | bash
   fi
 }
 
-check_direnv() {
-  command_exists direnv
+check_starship() {
+  command_exists starship
 }
-install_direnv() {
-  if command_exists brew; then
-    brew install direnv
-  elif command_exists apt-get; then
-    install_apt_package direnv
-  fi
+install_starship_mise() {
+  mise use -g starship
+}
+
+check_fzf() {
+  command_exists fzf
+}
+install_fzf_mise() {
+  mise use -g fzf
+}
+
+check_gh() {
+  command_exists gh
+}
+install_gh_mise() {
+  mise use -g github-cli
+}
+
+check_bat() {
+  command_exists bat
+}
+install_bat_mise() {
+  mise use -g bat
+}
+
+install_mise_tools() {
+  ensure check_starship install_starship_mise
+  ensure check_fzf install_fzf_mise
+  ensure check_gh install_gh_mise
+  ensure check_bat install_bat_mise
 }
 
 check_fish() {
@@ -67,29 +93,9 @@ install_fisher() {
   fish -c 'curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher'
 }
 
-check_starship() {
-  command_exists starship
-}
-install_starship() {
-  if command_exists brew; then
-    brew install starship
-  elif test -n "$PREFIX" && test "$ARCH" = aarch64; then
-    sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y --bin-dir "$PREFIX/bin"
-  else
-    sudo sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
-  fi
-}
 
-check_fzf() {
-  command_exists fzf
-}
-install_fzf() {
-  if command_exists brew; then
-    brew install fzf
-  elif command_exists apt-get; then
-    install_apt_package fzf
-  fi
-}
+
+
 
 check_fish_git() {
   test -f ~/.config/fish/conf.d/git.fish
@@ -98,44 +104,9 @@ install_fish_git() {
   fish -c 'fisher install jhillyerd/plugin-git'
 }
 
-check_gh() {
-  command_exists gh
-}
-install_gh() {
-  if command_exists brew; then
-    brew install gh
-  elif command_exists pkg; then
-    pkg install gh -y
-  elif command_exists apt-get; then
-    curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-    sudo apt-get update
-    install_apt_package gh
-  fi
-}
 
-check_bat() {
-  command_exists bat
-}
-install_bat() {
-  if command_exists brew; then
-    brew install bat
-  elif command_exists pkg; then
-    pkg install bat -y
-  elif command_exists apt-get; then
-    if test "$ARCH" = armv7l; then
-      wget -O/tmp/bat.deb https://github.com/sharkdp/bat/releases/download/v0.18.3/bat_0.18.3_armhf.deb
-    elif test "$ARCH" = aarch64; then
-      wget -O/tmp/bat.deb https://github.com/sharkdp/bat/releases/download/v0.18.3/bat_0.18.3_arm64.deb
-    else
-      wget -O/tmp/bat.deb https://github.com/sharkdp/bat/releases/download/v0.18.3/bat_0.18.3_amd64.deb
-    fi
-    install_apt_package /tmp/bat.deb
-  fi
-  if ! command_exists bat && test -f /usr/bin/batcat; then
-    sudo ln -s /usr/bin/batcat /usr/local/bin/bat
-  fi
-}
+
+
 
 setup_git_config() {
   # Only allow fast-forwards when pulling.
