@@ -1,12 +1,14 @@
 
-devenv@test:~/dotfiles #master [✘]
+devenv@test:~/dotfiles #feature/migrate-to-mise [✘]
 
 
 
 
 
-  ls -lh dotfiles
-  cd dotfiles && git status
-> clear
-  3/3 +S
+
+
+▌ ls -lh dotfiles
+▌ cd dotfiles && git status
+▌ clear
+  3/3 +S ──────────────────────────────────────────────────────────────────────
 >

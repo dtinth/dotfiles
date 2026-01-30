@@ -2,8 +2,7 @@
 ~
 ~
 ~
-~
-~                                 NVIM v0.4.4
+~                                 NVIM v0.10.4
 ~
 ~                 Nvim is open source and freely distributable
 ~                           https://neovim.io/#chat
@@ -13,12 +12,13 @@
 ~                type  :q<Enter>               to exit
 ~                type  :help<Enter>            for help
 ~
+~               type  :help news<Enter> to see changes in v0.10
+~
 ~                        Help poor children in Uganda!
 ~                type  :help iccf<Enter>       for information
 ~
 ~
 ~
-~
 [No Name]                                                     0,0-1          All
 
-[0] 0:fish*                                   "vim /home/devenv" 09:00 08-Jun-23
+[0] 0:fish*                                              "vim ~" 10:01 30-Jan-26
