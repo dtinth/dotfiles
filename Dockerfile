@@ -1,6 +1,6 @@
 FROM debian:trixie
 
-RUN apt-get update && apt-get install -y sudo python3 python3-pip
+RUN apt-get update && apt-get install -y sudo curl python3 python3-pip
 RUN useradd -m -s /bin/bash -G sudo devenv
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
