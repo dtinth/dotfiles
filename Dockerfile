@@ -1,10 +1,20 @@
 FROM debian:trixie
 
-RUN apt-get update && apt-get install -y sudo curl python3 python3-pip
-RUN useradd -m -s /bin/bash -G sudo devenv
-RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-  && apt-get -y install --no-install-recommends tmux neovim git
+  && apt-get install -y --no-install-recommends \
+    sudo \
+    curl \
+    python3 \
+    python3-pip \
+    tmux \
+    neovim \
+    git \
+    fish \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN useradd -m -s /bin/bash -G sudo devenv \
+  && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
 USER devenv
 
 WORKDIR /home/devenv/dotfiles
