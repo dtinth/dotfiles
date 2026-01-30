@@ -11,6 +11,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     git \
     fish \
     libatomic1 \
+    gpg \
   && rm -rf /var/lib/apt/lists/*
 
 RUN useradd -m -s /bin/bash -G sudo devenv \
