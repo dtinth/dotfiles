@@ -1,5 +1,5 @@
 
-devenv@test:~/dotfiles #feature/migrate-to-mise [✘]
+devenv@test:~/dotfiles #master [✘]
 
 
 
