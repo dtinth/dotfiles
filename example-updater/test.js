@@ -78,6 +78,9 @@ tester.session('pnpm', async (s) => {
   await s.send('mkdir -p /tmp/pnpm_test && cd /tmp/pnpm_test\r')
   await s.expect(PROMPT)
 
+  await s.send('mise settings set plugins.node.verify_signature false\r')
+  await s.expect(PROMPT)
+
   await s.send('mise use node\r')
   await s.expect('mise.toml')
   await s.expect(PROMPT)
