@@ -5,11 +5,6 @@
       path: fish/**/*.fish
       force: true
       create: true
-    ~/.claude/agents:
-      glob: true
-      path: claude/agents/**.md
-      force: true
-      create: true
     ~/.config/starship.toml:
       path: starship.toml
       force: true
