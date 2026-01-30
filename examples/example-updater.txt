@@ -1,15 +1,15 @@
 devenv@test:~
 ⬢ [Docker] $ bat dotfiles/example-updater/test.js -r :8 && sleep inf
-───────┬────────────────────────────────────────────────────────────────────────
-       │ File: dotfiles/example-updater/test.js
-───────┼────────────────────────────────────────────────────────────────────────
-   1   │ const { ShellTester } = require('shell-tester')
-   2   │
-   3   │ const TESTER_SHELL_COMMAND =
-   4   │   process.env.TESTER_SHELL_COMMAND ||
-   5   │   'docker run -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/
-       │ docker:/usr/bin/docker -h test --init -ti --rm devenv fish'
-   6   │
-   7   │ const PROMPT = '$'
-   8   │
-───────┴────────────────────────────────────────────────────────────────────────
+─────┬──────────────────────────────────────────────────────────────────────────
+     │ File: dotfiles/example-updater/test.js
+─────┼──────────────────────────────────────────────────────────────────────────
+   1 │ const { ShellTester } = require('shell-tester')
+   2 │
+   3 │ const TESTER_SHELL_COMMAND =
+   4 │   process.env.TESTER_SHELL_COMMAND ||
+   5 │   'docker run -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/do
+     │ cker:/usr/bin/docker -h test --init -ti --rm devenv fish'
+   6 │
+   7 │ const PROMPT = '$'
+   8 │
+─────┴──────────────────────────────────────────────────────────────────────────

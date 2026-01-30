@@ -1,34 +1,34 @@
-/functions/devenv.fish', 'fish/conf.d/aliases.fish', 'fish/conf.d/path.fish', 'f
-ish/conf.d/direnv.fish', 'fish/conf.d/abbreviations.fish', 'fish/conf.d/starship
-.fish', 'fish/conf.d/pnpm.fish', 'fish/conf.d/variables.fish']
-Link exists ~/.config/fish/functions/qc.fish -> /home/devenv/dotfiles/fish/funct
-ions/qc.fish
-Link exists ~/.config/fish/functions/otmp.fish -> /home/devenv/dotfiles/fish/fun
-ctions/otmp.fish
-Link exists ~/.config/fish/functions/update_dotfiles.fish -> /home/devenv/dotfil
-es/fish/functions/update_dotfiles.fish
-Link exists ~/.config/fish/functions/a,.fish -> /home/devenv/dotfiles/fish/funct
-ions/a,.fish
-Link exists ~/.config/fish/functions/fish_user_key_bindings.fish -> /home/devenv
-/dotfiles/fish/functions/fish_user_key_bindings.fish
-Link exists ~/.config/fish/functions/fzf_key_bindings.fish -> /home/devenv/dotfi
-les/fish/functions/fzf_key_bindings.fish
-Link exists ~/.config/fish/functions/devenv.fish -> /home/devenv/dotfiles/fish/f
-unctions/devenv.fish
+s/otmp.fish']
+Link exists ~/.config/fish/conf.d/mise.fish -> /home/devenv/dotfiles/fish/conf.d
+/mise.fish
 Link exists ~/.config/fish/conf.d/aliases.fish -> /home/devenv/dotfiles/fish/con
 f.d/aliases.fish
-Link exists ~/.config/fish/conf.d/path.fish -> /home/devenv/dotfiles/fish/conf.d
-/path.fish
 Link exists ~/.config/fish/conf.d/direnv.fish -> /home/devenv/dotfiles/fish/conf
 .d/direnv.fish
 Link exists ~/.config/fish/conf.d/abbreviations.fish -> /home/devenv/dotfiles/fi
 sh/conf.d/abbreviations.fish
-Link exists ~/.config/fish/conf.d/starship.fish -> /home/devenv/dotfiles/fish/co
-nf.d/starship.fish
-Link exists ~/.config/fish/conf.d/pnpm.fish -> /home/devenv/dotfiles/fish/conf.d
-/pnpm.fish
+Link exists ~/.config/fish/conf.d/path.fish -> /home/devenv/dotfiles/fish/conf.d
+/path.fish
 Link exists ~/.config/fish/conf.d/variables.fish -> /home/devenv/dotfiles/fish/c
 onf.d/variables.fish
+Link exists ~/.config/fish/conf.d/starship.fish -> /home/devenv/dotfiles/fish/co
+nf.d/starship.fish
+Link exists ~/.config/fish/functions/update_dotfiles.fish -> /home/devenv/dotfil
+es/fish/functions/update_dotfiles.fish
+Link exists ~/.config/fish/functions/fish_user_key_bindings.fish -> /home/devenv
+/dotfiles/fish/functions/fish_user_key_bindings.fish
+Link exists ~/.config/fish/functions/devenv.fish -> /home/devenv/dotfiles/fish/f
+unctions/devenv.fish
+Link exists ~/.config/fish/functions/develop.fish -> /home/devenv/dotfiles/fish/
+functions/develop.fish
+Link exists ~/.config/fish/functions/a,.fish -> /home/devenv/dotfiles/fish/funct
+ions/a,.fish
+Link exists ~/.config/fish/functions/fzf_key_bindings.fish -> /home/devenv/dotfi
+les/fish/functions/fzf_key_bindings.fish
+Link exists ~/.config/fish/functions/qc.fish -> /home/devenv/dotfiles/fish/funct
+ions/qc.fish
+Link exists ~/.config/fish/functions/otmp.fish -> /home/devenv/dotfiles/fish/fun
+ctions/otmp.fish
 Link exists ~/.config/starship.toml -> /home/devenv/dotfiles/starship.toml
 All links have been set up
 bash -e setup_stuff
