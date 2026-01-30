@@ -12,6 +12,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     fish \
     libatomic1 \
     gpg \
+    gpg-agent \
   && rm -rf /var/lib/apt/lists/*
 
 RUN useradd -m -s /bin/bash -G sudo devenv \
