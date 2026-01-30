@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y sudo curl python3 python3-pip
 RUN useradd -m -s /bin/bash -G sudo devenv
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-  && apt-get -y install --no-install-recommends tmux neovim
+  && apt-get -y install --no-install-recommends tmux neovim git
 USER devenv
 
 WORKDIR /home/devenv/dotfiles
