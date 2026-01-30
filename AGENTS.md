@@ -150,6 +150,22 @@ tester.session('basic', async (s) => {
 - **Playwright** for screenshot generation
 - **shell-tester** for terminal testing
 
+## CI/CD Monitoring
+
+### Waiting for GitHub Actions Checks
+When working with pull requests, use the **wait-for-ci** skill to monitor check status:
+
+```bash
+# Monitor PR checks until completion
+mise exec deno -- deno run --allow-run=gh --allow-env https://github.com/dtinth/wait-for-ci/raw/main/wait-for-ci.ts
+```
+
+This command:
+- Monitors the current branch's PR status checks
+- Polls periodically and prints status updates
+- Shows summary when all checks finish
+- Exits with appropriate status
+
 ## Notes
 
 - This repository uses GitHub Actions for CI/CD
