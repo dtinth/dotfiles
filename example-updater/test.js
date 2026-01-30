@@ -87,6 +87,8 @@ tester.session('pnpm', async (s) => {
   await s.expect(PROMPT)
 
   await s.send('corepack enable && pnpm init\r')
+  await s.expect('Corepack is about to download')
+  await s.send('Y\r')
   await s.expect('packageManager')
   await s.capture('pnpm')
 })
