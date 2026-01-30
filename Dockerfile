@@ -11,7 +11,9 @@ COPY --chown=devenv:devenv ./vendor/*.tar.gz ./vendor/
 COPY --chown=devenv:devenv ./fish/ ./fish/
 COPY --chown=devenv:devenv ./install ./install.conf.yaml ./setup_stuff ./
 RUN touch ./starship.toml
+ENV DOTFILES_BUILDING=1
 RUN ./install
+ENV DOTFILES_BUILDING=
 COPY --chown=devenv:devenv ./ ./
 RUN ./install
 RUN sudo usermod --shell /usr/bin/fish devenv
