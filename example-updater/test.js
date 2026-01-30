@@ -71,4 +71,24 @@ tester.session('nvim', async (s) => {
   await s.capture('nvim')
 })
 
+tester.session('pnpm', async (s) => {
+  await s.resize(80, 20)
+
+  await s.expect(PROMPT)
+  await s.send('mkdir -p /tmp/pnpm_test && cd /tmp/pnpm_test\r')
+  await s.expect(PROMPT)
+
+  await s.send('mise use node\r')
+  await s.expect('mise.toml')
+  await s.expect(PROMPT)
+
+  await s.send('npm install -g corepack\r')
+  await s.expect('package')
+  await s.expect(PROMPT)
+
+  await s.send('corepack enable && pnpm init\r')
+  await s.expect('packageManager')
+  await s.capture('pnpm')
+})
+
 tester.run()
