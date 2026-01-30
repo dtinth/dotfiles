@@ -119,7 +119,7 @@ setup_git_config() {
 }
 setup_tmux_config() {
   # Load ~/dotfiles/tmux/tmux.conf
-  if ! grep -q 'source-file ~/dotfiles/tmux/tmux.conf' ~/.tmux.conf; then
+  if [ ! -f ~/.tmux.conf ] || ! grep -q 'source-file ~/dotfiles/tmux/tmux.conf' ~/.tmux.conf; then
     echo 'source-file ~/dotfiles/tmux/tmux.conf' >> ~/.tmux.conf
   fi
 }
