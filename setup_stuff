@@ -2,6 +2,9 @@
 set -eo pipefail
 ARCH=$(uname -m)
 
+# Add mise shims to PATH for scripting mode (before mise is activated in shell)
+export PATH="$HOME/.local/share/mise/shims:$HOME/.local/bin:$PATH"
+
 if test -e /opt/homebrew/bin
 then
   PATH=/opt/homebrew/bin:$PATH
@@ -101,15 +104,12 @@ install_fisher() {
 
 
 
-
 check_fish_git() {
   test -f ~/.config/fish/conf.d/git.fish
 }
 install_fish_git() {
   fish -c 'fisher install jhillyerd/plugin-git'
 }
-
-
 
 
 
@@ -157,7 +157,7 @@ install_apt_package() {
 }
 install_enqueued_apt_packages() {
   if [ "${#apt_packages_to_install[@]}" -gt 0 ]; then
-    sudo apt-get install -y "${apt_packages_to_install[@]}"
+    sudo apt-get install -y "${apt_packages_to_recheck[@]}"
     apt_packages_to_install=()
   fi
 }
