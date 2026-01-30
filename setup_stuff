@@ -46,6 +46,7 @@ check_starship() {
 }
 install_starship_mise() {
   mise use -g starship
+  mise reshim
 }
 
 check_fzf() {
@@ -53,6 +54,7 @@ check_fzf() {
 }
 install_fzf_mise() {
   mise use -g fzf
+  mise reshim
 }
 
 check_gh() {
@@ -60,6 +62,7 @@ check_gh() {
 }
 install_gh_mise() {
   mise use -g github-cli
+  mise reshim
 }
 
 check_bat() {
@@ -67,6 +70,7 @@ check_bat() {
 }
 install_bat_mise() {
   mise use -g bat
+  mise reshim
 }
 
 install_mise_tools() {
