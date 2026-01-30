@@ -10,6 +10,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     neovim \
     git \
     fish \
+    libatomic1 \
   && rm -rf /var/lib/apt/lists/*
 
 RUN useradd -m -s /bin/bash -G sudo devenv \
