@@ -1,19 +1,20 @@
-Welcome to fish, the friendly interactive shell
-Type `help` for instructions on how to use fish
+? Do you want to continue? [Y/n] Y
 
-devenv@test:~
-⬢ [Docker] $ node
-fish: Unknown command: node
+Wrote to /tmp/pnpm_test/package.json
 
-devenv@test:~
-⬢ [Docker] $ pnpm env use --global lts
-Fetching Node.js 18.16.0 ...
-Node.js 18.16.0 is activated
-/home/devenv/.local/share/pnpm/node -> /home/devenv/.local/share/pnpm/nodejs/18.
-16.0/bin/node
+{
+  "name": "pnpm_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.28.2"
+}
 
-devenv@test:~ took 4s
-⬢ [Docker] $ node
-Welcome to Node.js v18.16.0.
-Type ".help" for more information.
->
+devenv@test:/tmp/pnpm_test package@v1.0.0 node@v25.5.0
+⬢ [Docker] $
