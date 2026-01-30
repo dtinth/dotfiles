@@ -38,6 +38,7 @@ install_mise() {
   else
     curl https://mise.run | bash
   fi
+  export PATH="$HOME/.local/bin:$PATH"
 }
 
 check_starship() {
