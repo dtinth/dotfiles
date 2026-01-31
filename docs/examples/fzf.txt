@@ -1,0 +1,14 @@
+
+devenv@test:~/dotfiles #master [✘]
+
+
+
+
+
+
+
+▌ ls -lh dotfiles
+▌ cd dotfiles && git status
+▌ clear
+  3/3 +S ──────────────────────────────────────────────────────────────────────
+>
