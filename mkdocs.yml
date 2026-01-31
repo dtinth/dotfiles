@@ -1,4 +1,4 @@
-site_name: My Documentation
+site_name: dtinth/dotfiles
 site_url: https://docs.dt.in.th/dotfiles/
 theme:
   name: dtinth
