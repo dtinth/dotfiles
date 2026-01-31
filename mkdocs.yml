@@ -1,36 +1,4 @@
-site_name: dotfiles
-site_description: Personal dotfiles and shell configuration
-site_author: dtinth
+site_name: My Documentation
 site_url: https://docs.dt.in.th/dotfiles/
-
 theme:
-  name: material
-  palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
-
-extra:
-  example_base: https://github.com/dtinth/dotfiles/raw/master/examples/
-
-nav:
-  - Home: index.md
-  - Shell Abbreviations: abbr.md
-  - Testing: testing.md
-
-markdown_extensions:
-  - pymdownx.keys
-  - tables
-  - pymdownx.snippets:
-      base_path: docs
+  name: dtinth
