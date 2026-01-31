@@ -13,7 +13,6 @@ fi
 main() {
   ensure  check_mise       install_mise
   ensure  check_fish       install_fish
-  install_enqueued_apt_packages
   recheck_commands
 
   install_mise_tools
@@ -146,20 +145,13 @@ command_exists() {
   command -v "$1" >/dev/null 2>&1
 }
 
-apt_packages_to_install=()
 apt_updated=
 install_apt_package() {
   if [ -z "$apt_updated" ]; then
     sudo apt-get update || true
     apt_updated=1
   fi
-  apt_packages_to_install+=("$1")
-}
-install_enqueued_apt_packages() {
-  if [ "${#apt_packages_to_install[@]}" -gt 0 ]; then
-    sudo apt-get install -y "${apt_packages_to_recheck[@]}"
-    apt_packages_to_install=()
-  fi
+  sudo apt-get install -y "$1"
 }
 
 main
