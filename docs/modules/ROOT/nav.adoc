@@ -1,3 +1,0 @@
-* xref:index.adoc[]
-* xref:abbr.adoc[]
-* xref:testing.adoc[]

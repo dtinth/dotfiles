@@ -1,8 +1,8 @@
+s/otmp.fish']
+Link exists ~/.config/fish/conf.d/mise.fish -> /home/devenv/dotfiles/fish/conf.d
 /mise.fish
 Link exists ~/.config/fish/conf.d/aliases.fish -> /home/devenv/dotfiles/fish/con
 f.d/aliases.fish
-Link exists ~/.config/fish/conf.d/local.fish -> /home/devenv/dotfiles/fish/conf.
-d/local.fish
 Link exists ~/.config/fish/conf.d/direnv.fish -> /home/devenv/dotfiles/fish/conf
 .d/direnv.fish
 Link exists ~/.config/fish/conf.d/abbreviations.fish -> /home/devenv/dotfiles/fi

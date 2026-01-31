@@ -57,7 +57,7 @@ function getLineNumber(index, fileContents) {
   return lineNumber
 }
 
-function escapeAsciiDoc(x) {
+function escapeMarkdown(x) {
   return x.replace(/\|/g, '\\|')
 }
 
@@ -66,14 +66,11 @@ processFile('fish/conf.d/abbreviations.fish')
 
 abbrs.sort((a, b) => a.sortKey.localeCompare(b.sortKey))
 
-const out = ['[cols="3,1"]', '|===', '|Expansion |Name']
+const out = ['| Expansion | Name |', '| --------- | ---- |']
 for (const abbr of abbrs) {
   out.push(
-    '',
-    `|\`\`${escapeAsciiDoc(abbr.expansion)}\`\``,
-    `|\`\`${abbr.name}\`\``,
+    `| \`${escapeMarkdown(abbr.expansion)}\` | \`${abbr.name}\` |`,
   )
 }
-out.push('|===')
 
-fs.writeFileSync('docs/modules/ROOT/partials/abbr.adoc', out.join('\n'))
+fs.writeFileSync('docs/includes/abbr_table.md', out.join('\n'))

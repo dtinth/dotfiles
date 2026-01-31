@@ -3,10 +3,11 @@ Type help for instructions on how to use fish
 
 devenv@test:~
 ⬢ [Docker] $ ls dotfiles
-AGENTS.md           docs/             fish/              raycast/       vendor/
-LICENSE.md          dotbot/           install*           setup_stuff
-README.md           example-updater/  install.conf.yaml  starship.toml
-docker-compose.yml  examples/         install.ps1        tmux/
+AGENTS.md           dotbot/           install.conf.yaml  setup_stuff
+LICENSE.md          example-updater/  install.ps1        starship.toml
+README.md           examples/         mise.toml          tmux/
+docker-compose.yml  fish/             mkdocs.yml         vendor/
+docs/               install*          raycast/
 
 devenv@test:~
 ⬢ [Docker] $ cd
