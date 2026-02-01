@@ -2,3 +2,6 @@ site_name: dtinth/dotfiles
 site_url: https://docs.dt.in.th/dotfiles/
 theme:
   name: dtinth
+markdown_extensions:
+  - pymdownx.snippets:
+      base_path: docs
