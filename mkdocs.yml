@@ -2,6 +2,10 @@ site_name: dtinth/dotfiles
 site_url: https://docs.dt.in.th/dotfiles/
 theme:
   name: dtinth
+nav:
+  - Home: index.md
+  - Shell Abbreviations: abbr.md
+  - Testing: testing.md
 markdown_extensions:
   - pymdownx.snippets:
       base_path: docs
