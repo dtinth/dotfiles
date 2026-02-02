@@ -1,7 +1,5 @@
-nformation.
-mise ERROR Run with --verbose or MISE_VERBOSE=1 for more information
 
-devenv@test:~/dotfiles #migrate-to-mkdocs [✘]
+devenv@test:~/dotfiles #master [✘]
 
 
 

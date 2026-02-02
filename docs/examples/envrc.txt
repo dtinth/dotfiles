@@ -1,0 +1,20 @@
+devenv@test:~
+⬢ [Docker] $ mkdir -p /tmp/envrc_test && echo "export ANS=42" >> /tmp/envrc_test
+/.envrc
+
+devenv@test:~
+⬢ [Docker] $ cd /tmp/envrc_test
+direnv: error /tmp/envrc_test/.envrc is blocked. Run `direnv allow` to approve i
+ts content
+
+devenv@test:/tmp/envrc_test
+⬢ [Docker] $ direnv allow
+direnv: loading /tmp/envrc_test/.envrc
+direnv: export +ANS
+
+devenv@test:/tmp/envrc_test
+⬢ [Docker] $ echo $ANS
+42
+
+devenv@test:/tmp/envrc_test
+⬢ [Docker] $
