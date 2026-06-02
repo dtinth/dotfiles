@@ -1,10 +1,3 @@
-? Do you want to continue? [Y/n] Y
-
-Wrote to /tmp/pnpm_test/package.json
-
-{
-  "name": "pnpm_test",
-  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,8 +6,15 @@ Wrote to /tmp/pnpm_test/package.json
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.28.2"
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.5.1",
+      "onFail": "download"
+    }
+  },
+  "type": "module"
 }
 
-devenv@test:/tmp/pnpm_test package@v1.0.0 node@v25.5.0
+devenv@test:/tmp/pnpm_test package@v1.0.0 node@v26.3.0
 ⬢ [Docker] $
