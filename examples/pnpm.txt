@@ -1,4 +1,3 @@
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,12 +8,13 @@
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "^11.5.1",
+      "version": "11.23.0",
       "onFail": "download"
     }
   },
+  "packageManager": "pnpm@11.23.0",
   "type": "module"
 }
 
-devenv@test:/tmp/pnpm_test package@v1.0.0 node@v26.3.0
+devenv@test:/tmp/pnpm_test package@v1.0.0 node@v26.7.0
 ⬢ [Docker] $
